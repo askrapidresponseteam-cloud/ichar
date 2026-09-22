@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none;transition:color .25s}
+a:hover{color:#d90a05}
+[data-invert] a:hover{color:#ff8f86}
+button{font:inherit}
+input,select,textarea{font:inherit;color:#05065d}
+input::placeholder,textarea::placeholder{color:#9a9ab0}
+::selection{background:#d90a05;color:#fff}
+:focus-visible{outline:2px solid #d90a05;outline-offset:3px}
+@keyframes ichRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes ichFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<div data-ich-root="" style="background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif;overflow:clip">
+<dc-import name="ICHAR-Nav" active="report" hint-size="100%,64px"></dc-import>
+
+<main id="top">
+<section data-invert="" data-screen-label="Report masthead" style="background:radial-gradient(circle at 14% 10%,#ed1c1655 0,transparent 42%),linear-gradient(180deg,#2a0207,#05060b 82%);color:#fff;padding:clamp(116px,16vh,180px) clamp(20px,7vw,110px) clamp(38px,6vw,64px)">
+  <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:#ff8f86">Application · no complete file needed</div>
+  <h1 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,8.5vw,132px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase;margin:0 0 22px;max-width:14ch;text-wrap:balance;animation:ichRise .9s both">Report a Violation</h1>
+  <p style="max-width:62ch;margin:0;font-size:clamp(14px,1.2vw,18px);line-height:1.6;color:#ddd0d0;text-wrap:pretty">Tell us what you know. We route it to the right division, tell you what can be filed, and give you a reference number you can track.</p>
+</section>
+
+<section data-screen-label="Application" style="padding:clamp(36px,5vw,70px) clamp(20px,7vw,110px) clamp(60px,9vw,120px);display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,56px);align-items:flex-start">
+
+  <form data-form="" style="flex:1 1 min(100%,520px);min-width:0;display:flex;flex-direction:column;gap:26px">
+    <div data-progress="" style="display:flex;flex-wrap:wrap;gap:6px">
+      <span data-dot="1" style="flex:1 1 90px;min-width:0;border-top:3px solid #05065d;padding-top:10px;font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#05065d">01 Division</span>
+      <span data-dot="2" style="flex:1 1 90px;min-width:0;border-top:3px solid #d7d7e2;padding-top:10px;font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#9a9ab0">02 Incident</span>
+      <span data-dot="3" style="flex:1 1 90px;min-width:0;border-top:3px solid #d7d7e2;padding-top:10px;font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#9a9ab0">03 Evidence</span>
+      <span data-dot="4" style="flex:1 1 90px;min-width:0;border-top:3px solid #d7d7e2;padding-top:10px;font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#9a9ab0">04 You</span>
+      <span data-dot="5" style="flex:1 1 90px;min-width:0;border-top:3px solid #d7d7e2;padding-top:10px;font-family:'DM Mono',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#9a9ab0">05 Review</span>
+    </div>
+
+    <div data-step="1" style="display:flex;flex-direction:column;gap:26px">
+      <div>
+        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">Which division?</h2>
+        <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">If you are unsure, pick the closest one. We re-route internally at intake.</p>
+        <div data-group="division" style="display:flex;flex-direction:column;gap:8px">
+          <button type="button" data-value="Human Rights" style="display:flex;align-items:flex-start;gap:14px;text-align:left;min-height:64px;padding:16px 18px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">
+            <span style="flex:0 0 auto;width:10px;height:10px;margin-top:5px;background:#d90a05"></span>
+            <span style="display:flex;flex-direction:column;gap:5px"><strong style="font-size:15px">Human Rights</strong><small style="font-size:13px;line-height:1.5;color:#6e6f8c">Women and children · violence, trafficking, abuse, institutional neglect</small></span>
+          </button>
+          <button type="button" data-value="Animal Rights" style="display:flex;align-items:flex-start;gap:14px;text-align:left;min-height:64px;padding:16px 18px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">
+            <span style="flex:0 0 auto;width:10px;height:10px;margin-top:5px;background:#ff4c23"></span>
+            <span style="display:flex;flex-direction:column;gap:5px"><strong style="font-size:15px">Animal Rights</strong><small style="font-size:13px;line-height:1.5;color:#6e6f8c">Cruelty, poisoning, illegal culling, trade, transport, wildlife</small></span>
+          </button>
+          <button type="button" data-value="Environmental Rights" style="display:flex;align-items:flex-start;gap:14px;text-align:left;min-height:64px;padding:16px 18px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">
+            <span style="flex:0 0 auto;width:10px;height:10px;margin-top:5px;background:#8d0b5e"></span>
+            <span style="display:flex;flex-direction:column;gap:5px"><strong style="font-size:15px">Environmental Rights</strong><small style="font-size:13px;line-height:1.5;color:#6e6f8c">Pollution, illegal mining and felling, waste, displacement</small></span>
+          </button>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 12px">How urgent is it?</h3>
+        <div data-group="urgency" style="display:flex;flex-wrap:wrap;gap:8px">
+          <button type="button" data-value="Emergency" style="flex:1 1 150px;min-height:48px;padding:13px 16px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;font-size:14px;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">Happening now</button>
+          <button type="button" data-value="Urgent" style="flex:1 1 150px;min-height:48px;padding:13px 16px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;font-size:14px;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">Within days</button>
+          <button type="button" data-value="Standard" style="flex:1 1 150px;min-height:48px;padding:13px 16px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;font-size:14px;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">Already past</button>
+        </div>
+      </div>
+    </div>
+
+    <div data-step="2" style="display:none;flex-direction:column;gap:22px">
+      <div>
+        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">What happened?</h2>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">Plain language is fine. Dates, places and names help, but write what you know.</p>
+      </div>
+      <label style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Describe the incident</span>
+        <textarea name="summary" rows="7" placeholder="What happened, to whom, and who is responsible as far as you know." style="width:100%;padding:14px;border:1px solid #c9c9d6;background:#fff;font-size:15px;line-height:1.6;resize:vertical;min-height:150px" style-focus="border-color:#05065d"></textarea>
+      </label>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <label style="flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Where</span>
+          <input name="where" type="text" placeholder="Locality, city, state" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+        </label>
+        <label style="flex:1 1 160px;min-width:0;display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">When it happened</span>
+          <input name="when" type="date" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+        </label>
+      </div>
+      <label style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Who is affected</span>
+        <input name="affected" type="text" placeholder="A person, a group, community animals, a locality" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+      </label>
+      <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px">
+        <input name="ongoing" type="checkbox" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto">
+        <span style="font-size:14px;line-height:1.55">This is still happening or is likely to happen again</span>
+      </label>
+    </div>
+
+    <div data-step="3" style="display:none;flex-direction:column;gap:22px">
+      <div>
+        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">What do you have?</h2>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">Nothing is fine too. Tick what exists so intake knows what to ask for.</p>
+      </div>
+      <div data-evidence="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:8px">
+        <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px"><input type="checkbox" value="Photographs or video" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto"><span style="font-size:14px;line-height:1.55">Photographs or video</span></label>
+        <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px"><input type="checkbox" value="Medical or hospital records" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto"><span style="font-size:14px;line-height:1.55">Medical or hospital records</span></label>
+        <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px"><input type="checkbox" value="FIR or police papers" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto"><span style="font-size:14px;line-height:1.55">FIR or police papers</span></label>
+        <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px"><input type="checkbox" value="Official or municipal correspondence" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto"><span style="font-size:14px;line-height:1.55">Official or municipal correspondence</span></label>
+        <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px"><input type="checkbox" value="Witnesses willing to speak" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto"><span style="font-size:14px;line-height:1.55">Witnesses willing to speak</span></label>
+        <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px"><input type="checkbox" value="Nothing yet" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto"><span style="font-size:14px;line-height:1.55">Nothing yet</span></label>
+      </div>
+      <div style="border:1px dashed #c9c9d6;background:repeating-linear-gradient(135deg,#f4f4f8 0 10px,#fbfbfd 10px 20px);padding:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+        <div>
+          <strong style="display:block;font-size:14px;margin-bottom:6px">File upload</strong>
+          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.6;color:#6e6f8c">Secure upload is pending — intake will email you an upload link</span>
+        </div>
+        <a href="mailto:info.ichar@gmail.com?subject=Evidence%20for%20my%20application" style="display:inline-flex;align-items:center;min-height:44px;padding:12px 16px;border:1px solid #05065d;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Email evidence</a>
+      </div>
+      <label style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Has any authority already been approached?</span>
+        <select name="authority" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+          <option>No one yet</option>
+          <option>Police station</option>
+          <option>Municipal or local body</option>
+          <option>Pollution control board</option>
+          <option>A commission (NHRC, NCW, NCPCR, AWBI)</option>
+          <option>A court or tribunal</option>
+        </select>
+      </label>
+    </div>
+
+    <div data-step="4" style="display:none;flex-direction:column;gap:22px">
+      <div>
+        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">How we reach you</h2>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">You can report anonymously, but without a contact we cannot ask follow-up questions or tell you what was filed.</p>
+      </div>
+      <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px">
+        <input data-anon="" name="anonymous" type="checkbox" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto">
+        <span style="font-size:14px;line-height:1.55">Report anonymously</span>
+      </label>
+      <div data-contact="" style="display:flex;flex-direction:column;gap:14px">
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Name</span>
+          <input name="name" type="text" placeholder="Your name" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+        </label>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <label style="flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Email</span>
+            <input name="email" type="email" placeholder="name@example.com" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+          </label>
+          <label style="flex:1 1 160px;min-width:0;display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Phone <span style="text-transform:none;letter-spacing:0">(optional)</span></span>
+            <input name="phone" type="tel" placeholder="+91" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+          </label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Your relationship to the matter</span>
+          <select name="relation" style="width:100%;padding:13px 14px;border:1px solid #c9c9d6;background:#fff;font-size:15px" style-focus="border-color:#05065d">
+            <option>I am affected</option>
+            <option>A family member or friend is affected</option>
+            <option>I witnessed it</option>
+            <option>I work with an organisation</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px">
+        <input data-consent="" name="consent" type="checkbox" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto">
+        <span style="font-size:14px;line-height:1.55">I confirm the information is true to the best of my knowledge and I ask ICHAR to examine it.</span>
+      </label>
+      <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px">
+        <input name="share" type="checkbox" style="margin-top:3px;width:18px;height:18px;accent-color:#d90a05;flex:0 0 auto">
+        <span style="font-size:14px;line-height:1.55">ICHAR may share these details with an authority or partner where that is needed to act.</span>
+      </label>
+    </div>
+
+    <div data-step="5" style="display:none;flex-direction:column;gap:22px">
+      <div>
+        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">Check and submit</h2>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">Nothing is sent until you submit. You can go back and change any answer.</p>
+      </div>
+      <div data-review="" style="border:1px solid #d7d7e2;background:#fff"></div>
+    </div>
+
+    <p data-error="" style="display:none;margin:0;padding:12px 14px;background:#ffe7e5;color:#a3080a;font-size:14px;line-height:1.5"></p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid #d7d7e2;padding-top:20px">
+      <button data-back="" type="button" style="display:none;align-items:center;min-height:52px;padding:14px 20px;border:1px solid #05065d;background:transparent;color:#05065d;cursor:pointer;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">← Back</button>
+      <button data-next="" type="button" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 24px;border:0;background:#05065d;color:#fff;cursor:pointer;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .3s" style-hover="transform:translateY(-3px)">Continue →</button>
+      <button data-submit="" type="button" style="display:none;align-items:center;gap:10px;min-height:52px;padding:14px 24px;border:0;background:#d90a05;color:#fff;cursor:pointer;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-3px);box-shadow:0 14px 35px #d90a0555">Submit application</button>
+      <span data-stepnote="" style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#9a9ab0;margin-left:auto">Step 1 of 5</span>
+    </div>
+  </form>
+
+  <aside style="flex:1 1 min(100%,280px);min-width:0;position:sticky;top:90px;display:flex;flex-direction:column;gap:14px">
+    <div style="background:#1b0206;color:#fff;padding:24px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#ff8f86;margin:0 0 14px">If someone is in danger now</h3>
+      <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#ddd0d0">Call the statutory helpline first. ICHAR is not an emergency service and cannot dispatch help.</p>
+      <div style="display:flex;flex-direction:column">
+        <a href="tel:112" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff2b;font-size:14px;color:#fff">Emergency <span style="font-family:'DM Mono',ui-monospace,monospace">112</span></a>
+        <a href="tel:1098" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff2b;font-size:14px;color:#fff">Childline <span style="font-family:'DM Mono',ui-monospace,monospace">1098</span></a>
+        <a href="tel:181" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff2b;font-size:14px;color:#fff">Women's helpline <span style="font-family:'DM Mono',ui-monospace,monospace">181</span></a>
+      </div>
+    </div>
+    <div style="background:#eeeef4;padding:24px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 14px">What we can do</h3>
+      <div style="display:flex;flex-direction:column">
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Draft and support an FIR or complaint</div>
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Represent the matter before an authority</div>
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Facilitate legal aid and documentation</div>
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Escalate to a commission, the NGT or a PIL</div>
+      </div>
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:22px 0 14px">What we cannot do</h3>
+      <div style="display:flex;flex-direction:column">
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Send rescue teams or police</div>
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Guarantee an outcome or a timeline in court</div>
+        <div style="padding:10px 0;border-top:1px solid #d7d7e2;font-size:14px;line-height:1.5;color:#343554">Act where the facts cannot be verified at all</div>
+      </div>
+    </div>
+    <div style="border:1px solid #d7d7e2;padding:24px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 12px">Confidentiality</h3>
+      <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Information lodged with ICHAR stays within the system and is not shared outside it unless you authorise it, or the law requires it.</p>
+      <a href="ICHAR%20Policies.dc.html#privacy" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Read the privacy note <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+</section>
+
+<section data-done="" style="display:none;padding:clamp(40px,6vw,90px) clamp(20px,7vw,110px) clamp(60px,9vw,120px)">
+  <div style="animation:ichFade .6s both;display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,56px);align-items:flex-start">
+    <div style="flex:1 1 min(100%,420px);min-width:0">
+      <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Application received</div>
+      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,6vw,90px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 20px">Logged With the Council</h2>
+      <div style="background:#05065d;color:#fff;padding:clamp(22px,2.6vw,32px);margin-bottom:20px">
+        <span style="display:block;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#b9bbe6;margin-bottom:12px">Your reference</span>
+        <strong data-ref="" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.03em">ICH-0000-0000</strong>
+        <span data-refmeta="" style="display:block;margin-top:14px;font-size:14px;line-height:1.6;color:#c9cbf0"></span>
+      </div>
+      <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:#343554;max-width:56ch;text-wrap:pretty">Keep this reference. It is stored on this device so you can track the application, and intake quotes it in every reply.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a data-track="" href="ICHAR%20Case%20Status.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;background:#d90a05;color:#fff;padding:14px 22px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .35s" style-hover="transform:translateY(-4px);color:#fff">Track this application <span aria-hidden="true">↗</span></a>
+        <button data-another="" type="button" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 20px;border:1px solid #05065d;background:transparent;color:#05065d;cursor:pointer;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Report something else</button>
+      </div>
+    </div>
+    <div style="flex:1 1 min(100%,280px);min-width:0;background:#eeeef4;padding:clamp(22px,2.6vw,32px)">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 16px">What happens next</h3>
+      <div style="display:flex;flex-direction:column">
+        <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Within 48 hours</strong><span style="font-size:14px;line-height:1.55;color:#343554">Intake confirms the division and the office handling it.</span></div>
+        <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Within a week</strong><span style="font-size:14px;line-height:1.55;color:#343554">A legal officer tells you which provisions the facts support, and what is missing.</span></div>
+        <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Then</strong><span style="font-size:14px;line-height:1.55;color:#343554">Documentation, filing or escalation — tracked against your reference.</span></div>
+        <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Emergencies</strong><span style="font-size:14px;line-height:1.55;color:#343554">Flagged applications are reviewed the same day by the duty officer.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<dc-import name="ICHAR-Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const R = document.querySelector('[data-ich-root]');
+    if (!R) return;
+    this.off = [];
+    const on = (el, ev, fn) => { el.addEventListener(ev, fn); this.off.push(() => el.removeEventListener(ev, fn)); };
+    const q = s => R.querySelector(s);
+    const qa = s => Array.prototype.slice.call(R.querySelectorAll(s));
+
+    const form = q('[data-form]'), done = q('[data-done]');
+    const steps = qa('[data-step]'), dots = qa('[data-dot]');
+    const back = q('[data-back]'), next = q('[data-next]'), submit = q('[data-submit]');
+    const err = q('[data-error]'), note = q('[data-stepnote]'), review = q('[data-review]');
+    const anon = q('[data-anon]'), contact = q('[data-contact]'), consent = q('[data-consent]');
+    const state = { division: '', urgency: 'Standard', step: 1 };
+    const field = n => form.querySelector('[name="' + n + '"]');
+
+    const pick = (group, value) => {
+      qa('[data-group="' + group + '"] button').forEach(b => {
+        const sel = b.getAttribute('data-value') === value;
+        b.style.background = sel ? '#05065d' : '#fff';
+        b.style.color = sel ? '#fff' : '#05065d';
+        b.style.borderColor = sel ? '#05065d' : '#c9c9d6';
+        b.setAttribute('aria-pressed', String(sel));
+      });
+      state[group] = value;
+    };
+    qa('[data-group] button').forEach(b => {
+      const group = b.parentNode.getAttribute('data-group');
+      on(b, 'click', () => { pick(group, b.getAttribute('data-value')); setError(''); });
+    });
+    pick('urgency', 'Standard');
+
+    const hash = (location.hash || '').replace('#', '').toLowerCase();
+    const fromHash = { human: 'Human Rights', animal: 'Animal Rights', environment: 'Environmental Rights' }[hash];
+    if (fromHash) pick('division', fromHash);
+
+    const setError = m => {
+      err.textContent = m || '';
+      err.style.display = m ? 'block' : 'none';
+    };
+
+    const show = n => {
+      state.step = n;
+      steps.forEach(s => { s.style.display = Number(s.getAttribute('data-step')) === n ? 'flex' : 'none'; });
+      dots.forEach(d => {
+        const i = Number(d.getAttribute('data-dot'));
+        d.style.borderTopColor = i <= n ? '#05065d' : '#d7d7e2';
+        d.style.color = i <= n ? '#05065d' : '#9a9ab0';
+      });
+      back.style.display = n > 1 ? 'inline-flex' : 'none';
+      next.style.display = n < 5 ? 'inline-flex' : 'none';
+      submit.style.display = n === 5 ? 'inline-flex' : 'none';
+      note.textContent = 'Step ' + n + ' of 5';
+      setError('');
+      if (n === 5) renderReview();
+      const top = form.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    };
+
+    const val = n => { const f = field(n); return f ? String(f.value || '').trim() : ''; };
+    const evidence = () => qa('[data-evidence] input:checked').map(i => i.value);
+
+    const validate = n => {
+      if (n === 1 && !state.division) return 'Choose the division your report belongs to.';
+      if (n === 2) {
+        if (val('summary').length < 20) return 'Please describe the incident in a little more detail.';
+        if (!val('where')) return 'Tell us where it happened, at least the city.';
+      }
+      if (n === 4) {
+        if (!consent.checked) return 'Please confirm the information is true to the best of your knowledge.';
+        if (!anon.checked && !val('email')) return 'Add an email, or tick “report anonymously”.';
+      }
+      return '';
+    };
+
+    const row = (label, value) => '<div style="display:flex;flex-wrap:wrap;gap:6px 18px;padding:13px 18px;border-top:1px solid #e2e2ea"><span style="flex:0 0 130px;font-family:\'DM Mono\',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#6e6f8c">' + label + '</span><span style="flex:1 1 200px;min-width:0;font-size:14px;line-height:1.55;color:#05065d;word-break:break-word">' + value + '</span></div>';
+    const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    const renderReview = () => {
+      const ev = evidence();
+      const anonymous = anon.checked;
+      review.innerHTML =
+        row('Division', esc(state.division || '—')) +
+        row('Urgency', esc(state.urgency)) +
+        row('Incident', esc(val('summary') || '—')) +
+        row('Where', esc(val('where') || '—')) +
+        row('When', esc(val('when') || 'Not given')) +
+        row('Affected', esc(val('affected') || 'Not given')) +
+        row('Ongoing', field('ongoing').checked ? 'Yes, still happening' : 'No') +
+        row('Evidence', ev.length ? esc(ev.join(', ')) : 'None indicated') +
+        row('Authority', esc(val('authority'))) +
+        row('Reporter', anonymous ? 'Anonymous' : esc(val('name') || 'Not given')) +
+        row('Contact', anonymous ? 'Not provided' : esc([val('email'), val('phone')].filter(Boolean).join(' · ') || 'Not given')) +
+        row('Sharing', field('share').checked ? 'May be shared with an authority or partner' : 'Kept within ICHAR');
+    };
+
+    on(next, 'click', () => {
+      const m = validate(state.step);
+      if (m) { setError(m); return; }
+      show(Math.min(5, state.step + 1));
+    });
+    on(back, 'click', () => show(Math.max(1, state.step - 1)));
+    on(anon, 'change', () => {
+      contact.style.opacity = anon.checked ? '.45' : '1';
+      contact.style.pointerEvents = anon.checked ? 'none' : 'auto';
+    });
+
+    const makeRef = () => {
+      const y = new Date().getFullYear();
+      const n = Math.floor(1000 + Math.random() * 8999);
+      const d = { 'Human Rights': 'HR', 'Animal Rights': 'AR', 'Environmental Rights': 'ER' }[state.division] || 'GN';
+      return 'ICH-' + y + '-' + d + n;
+    };
+
+    const store = rec => {
+      try {
+        const raw = window.localStorage.getItem('ichar.applications');
+        const list = raw ? JSON.parse(raw) : [];
+        list.unshift(rec);
+        window.localStorage.setItem('ichar.applications', JSON.stringify(list.slice(0, 25)));
+      } catch (e) { /* storage unavailable */ }
+    };
+
+    on(submit, 'click', () => {
+      const m = validate(4) || validate(2) || validate(1);
+      if (m) { setError(m); return; }
+      const ref = makeRef();
+      const rec = {
+        ref: ref,
+        division: state.division,
+        urgency: state.urgency,
+        where: val('where'),
+        when: val('when'),
+        summary: val('summary'),
+        affected: val('affected'),
+        ongoing: field('ongoing').checked,
+        evidence: evidence(),
+        authority: val('authority'),
+        anonymous: anon.checked,
+        name: anon.checked ? '' : val('name'),
+        email: anon.checked ? '' : val('email'),
+        phone: anon.checked ? '' : val('phone'),
+        relation: val('relation'),
+        share: field('share').checked,
+        created: new Date().toISOString(),
+        stage: 1
+      };
+      store(rec);
+      q('[data-ref]').textContent = ref;
+      q('[data-refmeta]').textContent = state.division + ' · ' + state.urgency.toLowerCase() + ' · logged ' + new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+      q('[data-track]').setAttribute('href', 'ICHAR%20Case%20Status.dc.html#' + ref);
+      form.parentNode.style.display = 'none';
+      done.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    on(q('[data-another]'), 'click', () => { window.location.reload(); });
+  }
+
+  componentWillUnmount() { (this.off || []).forEach(f => f()); }
+}
+</script>
+</body>
+</html>

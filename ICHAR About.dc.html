@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none;transition:color .25s}
+a:hover{color:#d90a05}
+[data-invert] a:hover{color:#ff8f86}
+button{font:inherit}
+::selection{background:#d90a05;color:#fff}
+:focus-visible{outline:2px solid #d90a05;outline-offset:3px}
+@keyframes ichRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes ichSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<div data-ich-root="" style="background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif;overflow:clip">
+<dc-import name="ICHAR-Nav" active="about" hint-size="100%,64px"></dc-import>
+
+<main id="top">
+<section data-invert="" data-screen-label="About masthead" style="position:relative;overflow:hidden;background:radial-gradient(circle at 16% 8%,#ed1c1655 0,transparent 44%),linear-gradient(180deg,#2a0207,#05060b 78%);color:#fff;padding:clamp(120px,17vh,190px) clamp(20px,7vw,110px) clamp(44px,7vw,80px)" style-before="content:'';position:absolute;inset:-40%;background:conic-gradient(from 90deg at 50% 50%,transparent,#ff2a1e1f,transparent,#ffffff14,transparent);animation:ichSpin 26s linear infinite">
+  <div style="position:relative;z-index:2">
+    <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px;color:#ff8f86">About the council</div>
+    <h1 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(46px,9vw,140px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase;margin:0 0 26px;max-width:16ch;text-wrap:balance;animation:ichRise .9s both">A Rights Institution, Not a Campaign</h1>
+    <p style="max-width:60ch;margin:0 0 30px;font-size:clamp(14px,1.2vw,18px);line-height:1.6;color:#ddd0d0;text-wrap:pretty">ICHAR exists to protect the voiceless, hold power accountable, and transform rights from paper promises into lived realities — for humans and animals alike.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">
+      <a href="#purpose" style="display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #ffffff44;color:#fff">Purpose</a>
+      <a href="#functions" style="display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #ffffff44;color:#fff">What we do</a>
+      <a href="#protect" style="display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #ffffff44;color:#fff">Who we protect</a>
+      <a href="#method" style="display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #ffffff44;color:#fff">How a council works</a>
+      <a href="#offices" style="display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #ffffff44;color:#fff">Offices</a>
+      <a href="#partners" style="display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #ffffff44;color:#fff">Collaboration</a>
+    </div>
+  </div>
+</section>
+
+<section id="purpose" data-screen-label="Purpose" style="padding:clamp(60px,9vw,120px) clamp(20px,7vw,110px);scroll-margin-top:80px">
+  <div data-reveal="" style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Objective · Vision · Mission</div>
+  <h2 data-reveal="" style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.8vw,94px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 clamp(28px,4vw,48px);max-width:18ch;text-wrap:balance">Why the Council Exists</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1px;background:#d7d7e2;border:1px solid #d7d7e2">
+    <div data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,38px);display:flex;flex-direction:column;gap:18px;transition:background .35s" style-hover="background:#f4f4f8">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#d90a05">Objective</span>
+      <p style="margin:0;font-size:clamp(14px,1.15vw,17px);line-height:1.55;color:#05065d;text-wrap:pretty">To uphold, protect and enforce the rights and dignity of humans and animals through law, advocacy, research and sustainable action at national and international levels.</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.7;color:#6e6f8c;text-wrap:pretty">To combat injustice, cruelty and exploitation affecting humans, animals and the environment through protection, prevention, legal action and public awareness.</p>
+    </div>
+    <div data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,38px);display:flex;flex-direction:column;gap:18px;transition:background .35s" style-hover="background:#f4f4f8">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#ff4c23">Vision</span>
+      <p style="margin:0;font-size:clamp(14px,1.15vw,17px);line-height:1.55;color:#05065d;text-wrap:pretty">A world governed by dignity, justice and compassion for all living beings.</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.7;color:#6e6f8c;text-wrap:pretty">A just, compassionate and sustainable world where the rights, dignity and well-being of humans, animals and the environment are universally respected and protected, enabling peaceful coexistence among all forms of life.</p>
+    </div>
+    <div data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,38px);display:flex;flex-direction:column;gap:18px;transition:background .35s" style-hover="background:#f4f4f8">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8d0b5e">Mission</span>
+      <p style="margin:0;font-size:clamp(14px,1.15vw,17px);line-height:1.55;color:#05065d;text-wrap:pretty">To defend rights, prevent injustice and drive systemic change through law, awareness and global cooperation.</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.7;color:#6e6f8c;text-wrap:pretty">Legal advocacy, research, education, policy engagement and international collaboration — ensuring justice, accountability and sustainable development for present and future generations.</p>
+    </div>
+  </div>
+</section>
+
+<section id="functions" data-screen-label="What we do" style="padding:clamp(60px,9vw,120px) clamp(20px,7vw,110px);scroll-margin-top:80px;background:#f4f4f8">
+  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(28px,4vw,46px)">
+    <h2 style="flex:1 1 300px;min-width:0;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">What ICHAR Actually Does</h2>
+    <p style="flex:1 1 300px;min-width:0;max-width:46ch;margin:0;font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#343554;text-wrap:pretty">A rights-protection, policy-intervention and institutional-accountability body operating at the intersection of law, governance, ethics and welfare.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1px;background:#d7d7e2;border:1px solid #d7d7e2">
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#6e6f8c">A</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(28px,2.8vw,38px);line-height:.92;letter-spacing:-.04em;margin:0;max-width:16ch">Rights Protection &amp; Legal Intervention</h3>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Legal aid facilitation and strategic litigation</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Complaint drafting and representation before authorities</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Monitoring compliance with national and international frameworks</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Supporting victims through FIRs, PILs and representations</li>
+      </ul>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#d90a05">Focus · Systemic correction, not only individual relief</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#6e6f8c">B</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(28px,2.8vw,38px);line-height:.92;letter-spacing:-.04em;margin:0;max-width:16ch">Documentation, Research &amp; Reporting</h3>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Field investigations and case documentation</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Thematic reports on women, children, animals and environment</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Shadow reports for UN mechanisms and statutory bodies</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Data-driven policy briefs and white papers</li>
+      </ul>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#d90a05">Focus · Credible records that compel action</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#6e6f8c">C</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(28px,2.8vw,38px);line-height:.92;letter-spacing:-.04em;margin:0;max-width:16ch">Policy Advocacy &amp; Institutional Reform</h3>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Ministries, statutory commissions and local administrations</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Parliamentary committees and policy forums</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">International mechanisms, UN and treaty bodies</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Memoranda, advisory opinions and draft amendments</li>
+      </ul>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#d90a05">Focus · Structural change over symbolic advocacy</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#6e6f8c">D</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(28px,2.8vw,38px);line-height:.92;letter-spacing:-.04em;margin:0;max-width:16ch">Capacity Building &amp; Education</h3>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Training police, officials, students, activists and community leaders</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Rights literacy programmes for vulnerable populations</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Workshops on animal welfare, child protection and environmental justice</li>
+        <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Certified compliance training for institutions and CSR teams</li>
+      </ul>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#d90a05">Focus · Prevention through knowledge</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px;grid-column:1/-1">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#6e6f8c">E</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(28px,2.8vw,38px);line-height:.92;letter-spacing:-.04em;margin:0;max-width:22ch">Emergency Response &amp; Rapid Action</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:24px">
+        <ul style="flex:1 1 260px;margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Violence against women or children</li>
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Mass animal cruelty</li>
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Environmental damage in progress</li>
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Custodial abuse or institutional neglect</li>
+        </ul>
+        <ul style="flex:1 1 260px;margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Legal response teams mobilised</li>
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Media documentation</li>
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Escalation to the competent authority</li>
+          <li style="padding:9px 0;border-top:1px solid #e2e2ea;font-size:14px;line-height:1.55;color:#343554">Coordination with on-ground partners</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:6px">
+        <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#d90a05">Focus · Speed, legality and accountability</p>
+        <a href="ICHAR%20Report%20a%20Violation.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Report something urgent <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="protect" data-screen-label="Who we protect" style="padding:clamp(60px,9vw,120px) clamp(20px,7vw,110px);scroll-margin-top:80px">
+  <div data-reveal="" style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Rights-based, not charity-based</div>
+  <h2 data-reveal="" style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 clamp(26px,4vw,44px);max-width:14ch;text-wrap:balance">Whom We Protect</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px">
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
+      <span style="display:block;height:8px;width:52px;background:#d90a05"></span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,40px);line-height:.92;letter-spacing:-.04em;margin:0">Women</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Survivors of domestic violence, sexual abuse, trafficking and workplace harassment; women denied access to justice, property or dignity; those failed by institutional apathy.</p>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#5d5e78">Legal basis · CEDAW · BNS 2023 · POCSO · Constitutional rights</p>
+    </article>
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
+      <span style="display:block;height:8px;width:52px;background:#d90a05"></span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,40px);line-height:.92;letter-spacing:-.04em;margin:0">Children</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Victims of abuse, neglect, exploitation, child labour and trafficking; children in conflict with law or in institutional care; children affected by poverty, disaster or displacement.</p>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#5d5e78">Legal basis · CRC · JJ Act · POCSO Act</p>
+    </article>
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
+      <span style="display:block;height:8px;width:52px;background:#ff4c23"></span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,40px);line-height:.92;letter-spacing:-.04em;margin:0">Animals</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Street animals subjected to cruelty or poisoning; wildlife affected by illegal trade or habitat destruction; animals in captivity, experimentation, transport or slaughter.</p>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#5d5e78">Legal basis · PCA Act 1960 · Wildlife Protection Act 1972</p>
+    </article>
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
+      <span style="display:block;height:8px;width:52px;background:#8d0b5e"></span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,40px);line-height:.92;letter-spacing:-.04em;margin:0">Affected Communities</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Communities impacted by pollution, deforestation and illegal mining; coastal, tribal and rural populations facing ecological injustice; future generations whose rights are compromised.</p>
+      <p style="margin:auto 0 0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#5d5e78">Legal basis · Article 21 · Environmental law · Sustainable development</p>
+    </article>
+  </div>
+  <div data-reveal="" style="margin-top:8px;background:#05065d;color:#fff;padding:clamp(22px,2.6vw,32px);display:flex;flex-wrap:wrap;gap:20px 40px">
+    <div style="flex:0 0 auto;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#b9bbe6">Indirect beneficiaries</div>
+    <div style="flex:1 1 320px;min-width:0;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;line-height:1.6">
+      <span>Human rights defenders and whistle-blowers</span>
+      <span>Grassroots activists and NGOs without legal backing</span>
+      <span>Ethical public servants seeking institutional reform</span>
+      <span>Society at large, through a strengthened rule of law</span>
+    </div>
+  </div>
+</section>
+
+<section data-invert="" data-screen-label="What we are not" style="background:#1b0206;color:#fff;padding:clamp(56px,8vw,110px) clamp(20px,7vw,110px)">
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,6vw,80px);align-items:flex-start">
+    <h2 data-reveal="" style="flex:1 1 300px;min-width:0;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(36px,5.2vw,84px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">What ICHAR Is Not</h2>
+    <div data-reveal="" style="flex:1 1 320px;min-width:0">
+      <div style="display:flex;flex-direction:column">
+        <div style="padding:14px 0;border-top:1px solid #ffffff2b;font-size:clamp(14px,1.15vw,17px);color:#ddd0d0">A political party or protest collective</div>
+        <div style="padding:14px 0;border-top:1px solid #ffffff2b;font-size:clamp(14px,1.15vw,17px);color:#ddd0d0">A religious or ideological body</div>
+        <div style="padding:14px 0;border-top:1px solid #ffffff2b;font-size:clamp(14px,1.15vw,17px);color:#ddd0d0">A charity limited to relief distribution</div>
+        <div style="padding:14px 0;border-top:1px solid #ffffff2b;border-bottom:1px solid #ffffff2b;font-size:clamp(14px,1.15vw,17px);color:#ddd0d0">A single-issue NGO</div>
+      </div>
+      <p style="margin:22px 0 0;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,3vw,44px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;color:#ff8f86">ICHAR is a rights institution.</p>
+    </div>
+  </div>
+</section>
+
+<section id="method" data-screen-label="How a council works" style="padding:clamp(60px,9vw,120px) clamp(20px,7vw,110px);scroll-margin-top:80px;background:#f4f4f8">
+  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(26px,4vw,44px)">
+    <div style="flex:1 1 300px;min-width:0">
+      <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Think · Act · Influence</div>
+      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">How a Council Works</h2>
+    </div>
+    <p style="flex:1 1 300px;min-width:0;max-width:46ch;margin:0;font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#343554;text-wrap:pretty">A council is not simply an implementing NGO. Its strength lies in policy influence, coordination, advocacy and standards — while still supporting selective ground action.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#d7d7e2;border:1px solid #d7d7e2">
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">01</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(24px,2.3vw,32px);line-height:.95;letter-spacing:-.035em;margin:0">Policy Advocacy &amp; Law Reform</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Study existing law, identify gaps, misuse and non-implementation, then submit policy briefs, draft amendments and recommendations to governments, ministries, courts and UN bodies — including as an expert body or amicus where permitted.</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">02</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(24px,2.3vw,32px);line-height:.95;letter-spacing:-.035em;margin:0">Research &amp; Reports</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Violation reports, cruelty and environmental-crime documentation, state-wise status reports, an annual State of Rights report and thematic studies. The reports are the credibility engine.</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">03</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(24px,2.3vw,32px);line-height:.95;letter-spacing:-.035em;margin:0">Advisory &amp; Capacity Building</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Training for police, local authorities, NGOs and corporate CSR teams; workshops, legal literacy programmes and rights awareness campaigns. The council is a knowledge backbone, not an activist group.</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">04</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(24px,2.3vw,32px);line-height:.95;letter-spacing:-.035em;margin:0">Coordination &amp; Accreditation</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Act as an umbrella body: accredit grassroots organisations, set ethical and operational standards, convene collaboration between NGOs, governments and international agencies, and maintain databases of activists, lawyers and researchers.</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">05</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(24px,2.3vw,32px);line-height:.95;letter-spacing:-.035em;margin:0">Strategic Interventions</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Not everything — high-impact cases only: strategic litigation, emergency response in extreme abuse cases, and pilot projects designed so partners can scale them.</p>
+    </article>
+    <article data-reveal="" style="background:#fbfbfd;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">06</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(24px,2.3vw,32px);line-height:.95;letter-spacing:-.035em;margin:0">International Representation</h3>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Participation in UN side events, global conferences and treaty consultations; MoUs with global councils and NGOs; transnational advocacy as the council expands beyond India.</p>
+    </article>
+  </div>
+</section>
+
+<section id="offices" data-screen-label="Offices" style="padding:clamp(60px,9vw,120px) clamp(20px,7vw,110px);scroll-margin-top:80px">
+  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(26px,4vw,44px)">
+    <div style="flex:1 1 300px;min-width:0">
+      <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">One head office, three branches</div>
+      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">Where We Work</h2>
+    </div>
+    <a href="ICHAR%20Council.dc.html#governance" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:12px;min-height:44px;font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em">Full governance structure <span aria-hidden="true" style="font-size:16px">↗</span></a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:8px">
+    <article data-reveal="" style="background:#05065d;color:#fff;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;min-height:230px">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#ff8f86">Head Office</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,42px);line-height:.92;letter-spacing:-.04em;margin:0">New Delhi</h3>
+      <p style="margin:0;font-size:14px;line-height:1.7;color:#c9cbf0">B108, Phase 1 Enclave<br>Chattarpur, New Delhi 110074</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.6;color:#b9bbe6">Apex governance, executive secretariat, legal &amp; policy affairs, international relations, finance and compliance.</p>
+    </article>
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;min-height:230px;transition:background .35s" style-hover="background:#ffe7e5">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6e6f8c">Branch</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,42px);line-height:.92;letter-spacing:-.04em;margin:0">Chennai</h3>
+      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#8a8a9e">Address to be published</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.6;color:#343554">Human rights, animal rights and environmental units, legal aid and case documentation cell.</p>
+    </article>
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;min-height:230px;transition:background .35s" style-hover="background:#ffe7e5">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6e6f8c">Branch</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,42px);line-height:.92;letter-spacing:-.04em;margin:0">Mumbai</h3>
+      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#8a8a9e">Address to be published</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.6;color:#343554">Human rights, animal rights and environmental units, legal aid and case documentation cell.</p>
+    </article>
+    <article data-reveal="" style="background:#eeeef4;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;min-height:230px;transition:background .35s" style-hover="background:#ffe7e5">
+      <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6e6f8c">Branch</span>
+      <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3vw,42px);line-height:.92;letter-spacing:-.04em;margin:0">Kolkata</h3>
+      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#8a8a9e">Address to be published</p>
+      <p style="margin:auto 0 0;font-size:13px;line-height:1.6;color:#343554">Human rights, animal rights and environmental units, legal aid and case documentation cell.</p>
+    </article>
+  </div>
+  <p data-reveal="" style="margin:20px 0 0;max-width:70ch;font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#6e6f8c;text-wrap:pretty">Each branch operates administratively on its own and is policy-controlled by the Delhi head office. Branch units report to the State Director, who reports to the Executive Director in Delhi.</p>
+</section>
+
+<section id="partners" data-screen-label="Collaboration" style="padding:clamp(60px,9vw,120px) clamp(20px,7vw,110px);scroll-margin-top:80px;background:#f4f4f8">
+  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(26px,4vw,44px)">
+    <div style="flex:1 1 300px;min-width:0">
+      <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">A convergence platform</div>
+      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;max-width:18ch;text-wrap:balance">Who We Collaborate With</h2>
+    </div>
+    <p style="flex:1 1 300px;min-width:0;max-width:46ch;margin:0;font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#343554;text-wrap:pretty">Because ICHAR covers human, animal and environmental rights together, it can convene organisations that rarely sit at the same table. Collaborations are formalised through a standard MoU.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;background:#d7d7e2;border:1px solid #d7d7e2">
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">Sector 01</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Civil liberties</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Fact-finding, PILs, reports, police and prison reform advocacy.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">Sector 02</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Women's rights</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Legal aid, gender justice campaigns, policy advocacy.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#d90a05">Sector 03</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Child rights</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Child protection, rescue, rehabilitation, legal reform.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#ff4c23">Sector 04</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Animal welfare</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Cruelty prevention, rescue networks, enforcement support.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#8d0b5e">Sector 05</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Environmental justice</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Displacement, livelihood, biodiversity and climate litigation.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#05065d">Sector 06</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Legal aid &amp; access</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Litigation support, legal clinics, strategic cases.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#05065d">Sector 07</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Equality &amp; inclusion</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Dalit, tribal, minority and disability rights organisations.</span></div>
+    <div data-reveal="" style="background:#fbfbfd;padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:150px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#05065d">Sector 08</span><strong style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:24px;line-height:1;letter-spacing:-.035em">Research &amp; academia</strong><span style="font-size:13px;line-height:1.55;color:#5d5e78">Policy papers, evidence-based advocacy, joint studies.</span></div>
+  </div>
+  <div data-reveal="" style="margin-top:8px;background:#fbfbfd;border:1px solid #d7d7e2;padding:clamp(22px,2.6vw,32px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+    <p style="margin:0;max-width:56ch;font-size:14px;line-height:1.65;color:#343554;text-wrap:pretty">Statutory bodies — NHRC, NCW, NCPCR, AWBI and State Human Rights Commissions — are engaged as institutions, not as partners. Named partnerships are published once an MoU is executed.</p>
+    <a href="mailto:info.ichar@gmail.com?subject=Partnership%20enquiry" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 22px;background:#05065d;color:#fff;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .35s" style-hover="transform:translateY(-4px);color:#fff">Propose a partnership <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<section data-screen-label="About CTA" style="padding:clamp(56px,8vw,120px) clamp(20px,7vw,110px);background:radial-gradient(circle at 82% 18%,#ed1c1626,transparent 32%),#fff">
+  <div data-reveal="" style="border-top:1px solid #05065d;padding-top:28px;display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,70px);align-items:flex-end">
+    <h2 style="flex:1 1 min(100%,300px);min-width:0;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,7vw,110px);line-height:.84;letter-spacing:-.055em;margin:0">Bring Us<br>a Case</h2>
+    <div style="flex:1 1 min(100%,280px);min-width:0;display:flex;flex-wrap:wrap;gap:10px">
+      <a href="ICHAR%20Report%20a%20Violation.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;background:#d90a05;color:#fff;padding:14px 22px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-5px);box-shadow:0 14px 35px #d90a0555;color:#fff">Report a violation <span aria-hidden="true">↗</span></a>
+      <a href="ICHAR%20Divisions.dc.html" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 20px;border:1px solid #05065d;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">See the divisions</a>
+      <a href="ICHAR%20Donate.dc.html" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 20px;border:1px solid #05065d;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Fund the work</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<dc-import name="ICHAR-Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const R = document.querySelector('[data-ich-root]');
+    if (!R) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'none';
+      io.unobserve(e.target);
+    }), { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+    Array.prototype.slice.call(R.querySelectorAll('[data-reveal]')).forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      el.style.transition = 'opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(40px)';
+      io.observe(el);
+    });
+    this.io = io;
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+}
+</script>
+</body>
+</html>

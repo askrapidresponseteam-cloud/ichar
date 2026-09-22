@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none;transition:color .25s}
+a:hover{color:#d90a05}
+[data-invert] a:hover{color:#ff8f86}
+button{font:inherit}
+input,select,textarea{font:inherit;color:inherit}
+::selection{background:#d90a05;color:#fff}
+:focus-visible{outline:2px solid #d90a05;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+
+<div data-navroot="">
+<header data-bar="" style="position:fixed;z-index:100;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:clamp(10px,1.4vw,18px) clamp(14px,4vw,26px);color:#fff;transition:background .35s,box-shadow .35s">
+  <a href="ICHAR%20Home.dc.html" aria-label="ICHAR home" style="position:relative;display:block;flex:0 0 auto;width:clamp(96px,10vw,128px);aspect-ratio:2/1">
+    <img data-logo="" src="assets/ichar-logo.png" alt="ICHAR, International Council for Human and Animal Rights" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 6px #00000033)"></a>
+  <div style="display:flex;align-items:center;gap:10px;flex:0 0 auto">
+    <a data-report-pill="" href="ICHAR%20Report%20a%20Violation.dc.html" style="display:none;align-items:center;min-height:44px;padding:11px 18px;background:#d90a05;color:#fff;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .35s" style-hover="transform:translateY(-3px);color:#fff">Report a violation</a>
+    <button data-menu="" type="button" aria-expanded="false" aria-label="Open navigation" style="width:46px;height:46px;flex:0 0 auto;border:0;border-radius:50%;background:#fff;color:#05065d;display:grid;place-content:center;gap:4px;cursor:pointer;box-shadow:0 4px 24px #00000022;transition:transform .35s" style-hover="transform:rotate(90deg)">
+      <span data-bar1="" style="display:block;width:16px;height:1.6px;background:currentColor;transition:transform .3s"></span>
+      <span data-bar2="" style="display:block;width:16px;height:1.6px;background:currentColor;transition:opacity .2s"></span>
+      <span data-bar3="" style="display:block;width:16px;height:1.6px;background:currentColor;transition:transform .3s"></span>
+    </button>
+  </div>
+</header>
+
+<div data-nav="" style="position:fixed;inset:0;z-index:90;background:#fbfbfd;transform:translateY(-102%);visibility:hidden;overflow-y:auto;display:flex;align-items:center;padding:clamp(84px,12vh,130px) clamp(20px,8vw,110px) clamp(36px,8vh,80px);transition:transform .7s cubic-bezier(.76,0,.24,1)">
+  <div style="width:100%;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,60px);align-items:flex-end">
+    <nav style="flex:1 1 320px;min-width:0">
+      <a data-key="about" href="ICHAR%20About.dc.html" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">About</a>
+      <a data-key="divisions" href="ICHAR%20Divisions.dc.html" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">Divisions</a>
+      <a data-key="council" href="ICHAR%20Council.dc.html" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">The Council</a>
+      <a data-key="report" href="ICHAR%20Report%20a%20Violation.dc.html" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">Report</a>
+      <a data-key="donate" href="ICHAR%20Donate.dc.html" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0;color:#d90a05">Donate</a>
+    </nav>
+    <div style="flex:1 1 260px;min-width:0;max-width:420px;font-size:14px;line-height:1.7">
+      <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;color:#6e6f8c">Peace · Compassion · Justice</div>
+      <p style="margin:0 0 20px;color:#343554">Human, animal and environmental rights: three divisions, one legal framework.</p>
+      <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:22px">
+        <a data-key="home" href="ICHAR%20Home.dc.html" style="display:flex;align-items:center;min-height:38px;font-size:14px">Home</a>
+        <a data-key="status" href="ICHAR%20Case%20Status.dc.html" style="display:flex;align-items:center;min-height:38px;font-size:14px">Track an application</a>
+        <a data-key="membership" href="ICHAR%20Donate.dc.html#membership" style="display:flex;align-items:center;min-height:38px;font-size:14px">Council membership</a>
+        <a data-key="policies" href="ICHAR%20Policies.dc.html" style="display:flex;align-items:center;min-height:38px;font-size:14px">Privacy &amp; accessibility</a>
+      </div>
+      <a href="mailto:info.ichar@gmail.com" style="display:block;margin:8px 0;text-decoration:underline;text-underline-offset:5px">info.ichar@gmail.com</a>
+      <a href="ICHAR%20About.dc.html#offices" style="display:block;margin:8px 0;text-decoration:underline;text-underline-offset:5px">Head Office, New Delhi</a>
+    </div>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:220},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;divisions&quot;,&quot;council&quot;,&quot;report&quot;,&quot;status&quot;,&quot;donate&quot;,&quot;policies&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;darkTop&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const R = document.querySelector('[data-navroot]');
+    if (!R) return;
+    this.off = [];
+    const on = (el, ev, fn, o) => { el.addEventListener(ev, fn, o); this.off.push(() => el.removeEventListener(ev, fn, o)); };
+    const q = s => R.querySelector(s);
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const bar = q('[data-bar]'), nav = q('[data-nav]'), btn = q('[data-menu]');
+    const logo = q('[data-logo]');
+    const pill = q('[data-report-pill]');
+    const bars = [q('[data-bar1]'), q('[data-bar2]'), q('[data-bar3]')];
+    const links = nav ? Array.prototype.slice.call(nav.querySelectorAll('a')) : [];
+    const active = String(this.props.active || '').toLowerCase();
+
+    links.forEach(a => {
+      if (a.getAttribute('data-key') === active) {
+        a.setAttribute('aria-current', 'page');
+        a.style.opacity = '.42';
+        a.style.pointerEvents = 'none';
+      }
+    });
+    if (pill && active !== 'report') pill.style.display = 'inline-flex';
+
+    let open = false;
+    const paint = () => {
+      const scrolled = window.pageYOffset > (this.props.darkTop === false ? 20 : 110);
+      const light = open || (this.props.darkTop === false && !scrolled);
+      if (logo) logo.style.filter = light ? 'drop-shadow(0 2px 8px #05065d33)' : 'drop-shadow(0 2px 8px #00000066)';
+      const solid = !open && scrolled;
+      bar.style.background = solid ? 'rgba(10,2,5,.92)' : 'transparent';
+      bar.style.backdropFilter = solid ? 'blur(10px)' : 'none';
+      bar.style.webkitBackdropFilter = solid ? 'blur(10px)' : 'none';
+      bar.style.boxShadow = solid ? '0 1px 0 rgba(255,255,255,.16)' : 'none';
+      if (pill) { pill.style.background = open ? '#05065d' : '#d90a05'; }
+    };
+
+    const setNav = v => {
+      open = v;
+      nav.style.transform = v ? 'translateY(0)' : 'translateY(-102%)';
+      nav.style.visibility = v ? 'visible' : 'hidden';
+      btn.setAttribute('aria-expanded', String(v));
+      btn.setAttribute('aria-label', v ? 'Close navigation' : 'Open navigation');
+      btn.style.background = v ? '#05065d' : '#fff';
+      btn.style.color = v ? '#fff' : '#05065d';
+      if (bars[0]) bars[0].style.transform = v ? 'translateY(5.6px) rotate(45deg)' : 'none';
+      if (bars[1]) bars[1].style.opacity = v ? '0' : '1';
+      if (bars[2]) bars[2].style.transform = v ? 'translateY(-5.6px) rotate(-45deg)' : 'none';
+      document.body.style.overflow = v ? 'hidden' : '';
+      links.forEach((a, i) => {
+        a.tabIndex = v ? 0 : -1;
+        if (reduce) return;
+        a.style.transition = 'transform .55s cubic-bezier(.16,1,.3,1),opacity .55s';
+        a.style.transitionDelay = (v ? i * 55 : 0) + 'ms';
+        a.style.transform = v ? 'none' : 'translateX(-34px)';
+        if (a.getAttribute('aria-current') !== 'page') a.style.opacity = v ? '1' : '0';
+      });
+      if (v) nav.scrollTop = 0;
+      paint();
+    };
+
+    setNav(false);
+    paint();
+    on(btn, 'click', () => setNav(!open));
+    links.forEach(a => on(a, 'click', () => setNav(false)));
+    on(window, 'keydown', e => { if (e.key === 'Escape' && open) { setNav(false); btn.focus(); } });
+    on(window, 'scroll', paint, { passive: true });
+    on(window, 'resize', paint);
+  }
+
+  componentWillUnmount() {
+    (this.off || []).forEach(f => f());
+    document.body.style.overflow = '';
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none;transition:color .25s}
+a:hover{color:#d90a05}
+[data-invert] a:hover{color:#ff8f86}
+button{font:inherit}
+input{font:inherit;color:#05065d}
+input::placeholder{color:#9a9ab0}
+::selection{background:#d90a05;color:#fff}
+:focus-visible{outline:2px solid #d90a05;outline-offset:3px}
+@keyframes ichRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes ichFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<div data-ich-root="" style="background:#fbfbfd;color:#05065d;font-family:Inter,Helvetica,Arial,sans-serif;overflow:clip;min-height:100vh;display:flex;flex-direction:column">
+<dc-import name="ICHAR-Nav" active="status" hint-size="100%,64px"></dc-import>
+
+<main id="top" style="flex:1 0 auto">
+<section data-invert="" data-screen-label="Status masthead" style="background:radial-gradient(circle at 80% 14%,#05065dcc 0,transparent 46%),linear-gradient(180deg,#1b0206,#05060b 84%);color:#fff;padding:clamp(116px,16vh,180px) clamp(20px,7vw,110px) clamp(38px,6vw,64px)">
+  <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:#ff8f86">Case tracking</div>
+  <h1 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,8.5vw,132px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase;margin:0 0 22px;max-width:14ch;text-wrap:balance;animation:ichRise .9s both">Track an Application</h1>
+  <p style="max-width:62ch;margin:0;font-size:clamp(14px,1.2vw,18px);line-height:1.6;color:#ddd0d0;text-wrap:pretty">Enter the reference you were given at intake. Applications submitted from this device are listed below the search.</p>
+</section>
+
+<section data-screen-label="Lookup" style="padding:clamp(36px,5vw,70px) clamp(20px,7vw,110px) clamp(60px,9vw,120px);display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,56px);align-items:flex-start">
+  <div style="flex:1 1 min(100%,520px);min-width:0;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
+      <label style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c">Reference number</span>
+        <input data-input="" type="text" placeholder="ICH-2026-HR1234" style="width:100%;padding:15px 16px;border:1px solid #c9c9d6;background:#fff;font-size:16px;letter-spacing:.04em;font-family:'DM Mono',ui-monospace,monospace" style-focus="border-color:#05065d">
+      </label>
+      <button data-lookup="" type="button" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:16px 24px;border:0;background:#05065d;color:#fff;cursor:pointer;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .3s" style-hover="transform:translateY(-3px)">Find it →</button>
+    </div>
+    <p data-msg="" style="display:none;margin:0;padding:12px 14px;background:#ffe7e5;color:#a3080a;font-size:14px;line-height:1.5"></p>
+
+    <article data-result="" style="display:none;animation:ichFade .5s both;border:1px solid #d7d7e2;background:#fff">
+      <div style="background:#05065d;color:#fff;padding:clamp(22px,2.6vw,32px);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-end">
+        <div>
+          <span style="display:block;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#b9bbe6;margin-bottom:10px">Reference</span>
+          <strong data-r-ref="" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,4.4vw,56px);line-height:1;letter-spacing:-.03em">ICH-0000-0000</strong>
+        </div>
+        <span data-r-badge="" style="flex:0 0 auto;padding:9px 14px;background:#d90a05;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Received</span>
+      </div>
+      <div data-r-meta="" style="display:flex;flex-wrap:wrap"></div>
+      <div style="padding:clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea">
+        <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 18px">Progress</h3>
+        <div data-r-timeline="" style="display:flex;flex-direction:column"></div>
+      </div>
+      <div style="padding:clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+        <p data-r-next="" style="margin:0;max-width:52ch;font-size:14px;line-height:1.6;color:#343554"></p>
+        <a data-r-mail="" href="mailto:info.ichar@gmail.com" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:13px 18px;border:1px solid #05065d;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Write to intake <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <div data-local="" style="display:none;flex-direction:column;gap:12px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0">Applications from this device</h3>
+      <div data-local-list="" style="display:flex;flex-direction:column;gap:8px"></div>
+      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#9a9ab0">Stored only in this browser. Clearing site data removes the list — the council's own record is unaffected.</p>
+    </div>
+  </div>
+
+  <aside style="flex:1 1 min(100%,280px);min-width:0;display:flex;flex-direction:column;gap:14px">
+    <div style="background:#eeeef4;padding:24px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 14px">The four stages</h3>
+      <div style="display:flex;flex-direction:column">
+        <div style="padding:12px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:4px">01 Received</strong><span style="font-size:13.5px;line-height:1.55;color:#343554">Logged and routed to a division and office.</span></div>
+        <div style="padding:12px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:4px">02 Documentation</strong><span style="font-size:13.5px;line-height:1.55;color:#343554">Facts verified, provisions identified.</span></div>
+        <div style="padding:12px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:4px">03 Legal action</strong><span style="font-size:13.5px;line-height:1.55;color:#343554">Complaint, FIR support, petition or representation.</span></div>
+        <div style="padding:12px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:4px">04 Follow-through</strong><span style="font-size:13.5px;line-height:1.55;color:#343554">Compliance, compensation and reporting.</span></div>
+      </div>
+      <a href="ICHAR%20Divisions.dc.html#process" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:10px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">How a case moves <span aria-hidden="true">↗</span></a>
+    </div>
+    <div style="border:1px solid #d7d7e2;padding:24px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 12px">Lost your reference?</h3>
+      <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Write to intake from the email you used, with the date and place of the incident. We will re-issue it.</p>
+      <a href="mailto:info.ichar@gmail.com?subject=Lost%20reference%20number" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">info.ichar@gmail.com</a>
+    </div>
+    <div style="background:#1b0206;color:#fff;padding:24px">
+      <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#ff8f86;margin:0 0 12px">Nothing filed yet?</h3>
+      <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#ddd0d0">An application takes about five minutes and can be made anonymously.</p>
+      <a href="ICHAR%20Report%20a%20Violation.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:13px 18px;background:#d90a05;color:#fff;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .3s" style-hover="transform:translateY(-3px);color:#fff">Report a violation <span aria-hidden="true">↗</span></a>
+    </div>
+    <div style="border:1px dashed #c9c9d6;padding:20px">
+      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#6e6f8c">Try the sample record <button data-demo="" type="button" style="border:0;background:transparent;padding:0;color:#d90a05;cursor:pointer;font:inherit;text-decoration:underline;text-underline-offset:3px">ICH-2026-HR0001</button> to see how a live case reads.</p>
+    </div>
+  </aside>
+</section>
+</main>
+
+<dc-import name="ICHAR-Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const R = document.querySelector('[data-ich-root]');
+    if (!R) return;
+    this.off = [];
+    const on = (el, ev, fn) => { el.addEventListener(ev, fn); this.off.push(() => el.removeEventListener(ev, fn)); };
+    const q = s => R.querySelector(s);
+    const input = q('[data-input]'), result = q('[data-result]'), msg = q('[data-msg]');
+
+    const DEMO = {
+      ref: 'ICH-2026-HR0001',
+      division: 'Human Rights',
+      urgency: 'Urgent',
+      where: 'Chattarpur, New Delhi',
+      when: '2026-08-14',
+      summary: 'Sample record. Domestic violence complaint with an unrecorded FIR; representation made to the station house officer and the District Legal Services Authority.',
+      created: '2026-08-16T09:20:00.000Z',
+      stage: 3,
+      office: 'Head Office, New Delhi',
+      demo: true
+    };
+    const STAGES = [
+      { name: 'Received', note: 'Logged and routed to a division and office.' },
+      { name: 'Documentation', note: 'Facts verified, provisions identified, missing material requested.' },
+      { name: 'Legal action', note: 'Complaint, FIR support, petition or representation filed.' },
+      { name: 'Follow-through', note: 'Compliance monitored, compensation tracked, outcome recorded.' }
+    ];
+    const NEXT = [
+      'Intake will confirm the division and the handling office within 48 hours.',
+      'A legal officer is checking the facts and will tell you what is missing.',
+      'The matter is before an authority. You will be told of every filing made in your name.',
+      'The file stays open until compliance is confirmed or the matter is formally closed.'
+    ];
+
+    const load = () => {
+      try {
+        const raw = window.localStorage.getItem('ichar.applications');
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) { return []; }
+    };
+
+    const fmt = iso => {
+      if (!iso) return '—';
+      const d = new Date(iso);
+      if (isNaN(d)) return iso;
+      return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    };
+    const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const cell = (label, value) => '<div style="flex:1 1 180px;min-width:0;padding:18px clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea"><span style="display:block;font-family:\'DM Mono\',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c;margin-bottom:7px">' + label + '</span><span style="display:block;font-size:14.5px;line-height:1.55;color:#05065d;word-break:break-word">' + value + '</span></div>';
+
+    const render = rec => {
+      const stage = Math.min(4, Math.max(1, rec.stage || 1));
+      q('[data-r-ref]').textContent = rec.ref;
+      const badge = q('[data-r-badge]');
+      badge.textContent = STAGES[stage - 1].name;
+      badge.style.background = stage >= 3 ? '#05065d' : '#d90a05';
+      q('[data-r-meta]').innerHTML =
+        cell('Division', esc(rec.division || '—')) +
+        cell('Office', esc(rec.office || (rec.division ? 'Head Office, New Delhi' : '—'))) +
+        cell('Incident date', esc(rec.when ? fmt(rec.when) : 'Not given')) +
+        cell('Place', esc(rec.where || '—')) +
+        cell('Logged', esc(fmt(rec.created))) +
+        cell('Priority', esc(rec.urgency || 'Standard')) +
+        (rec.summary ? '<div style="flex:1 1 100%;padding:18px clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea"><span style="display:block;font-family:\'DM Mono\',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c;margin-bottom:7px">As reported</span><span style="display:block;font-size:14.5px;line-height:1.6;color:#343554">' + esc(rec.summary) + '</span></div>' : '') +
+        (rec.demo ? '<div style="flex:1 1 100%;padding:14px clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea;background:#f4f4f8;font-family:\'DM Mono\',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;color:#8d0b5e">Sample record — illustrative only</div>' : '');
+
+      q('[data-r-timeline]').innerHTML = STAGES.map((s, i) => {
+        const nDone = i + 1 < stage, isNow = i + 1 === stage;
+        const dot = nDone ? '#05065d' : (isNow ? '#d90a05' : '#d7d7e2');
+        const txt = nDone || isNow ? '#05065d' : '#9a9ab0';
+        return '<div style="display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-top:1px solid #e2e2ea">' +
+          '<span style="flex:0 0 auto;width:12px;height:12px;margin-top:5px;border-radius:50%;background:' + dot + '"></span>' +
+          '<span style="flex:1 1 auto;min-width:0"><strong style="display:block;font-size:15px;color:' + txt + '">' + (i + 1 < 10 ? '0' : '') + (i + 1) + ' · ' + s.name + '</strong>' +
+          '<span style="display:block;margin-top:5px;font-size:14px;line-height:1.55;color:#6e6f8c">' + s.note + '</span></span>' +
+          (isNow ? '<span style="flex:0 0 auto;font-family:\'DM Mono\',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:#d90a05">Current</span>' : '') +
+          '</div>';
+      }).join('');
+
+      q('[data-r-next]').textContent = NEXT[stage - 1];
+      q('[data-r-mail]').setAttribute('href', 'mailto:info.ichar@gmail.com?subject=' + encodeURIComponent('Application ' + rec.ref));
+      result.style.display = 'block';
+      msg.style.display = 'none';
+    };
+
+    const find = refRaw => {
+      const ref = String(refRaw || '').trim().toUpperCase();
+      if (!ref) { fail('Enter the reference number you were given.'); return; }
+      if (ref === DEMO.ref) { render(DEMO); return; }
+      const rec = load().filter(r => String(r.ref).toUpperCase() === ref)[0];
+      if (rec) render(rec);
+      else fail('No application with that reference was found on this device. Check the number, or write to intake and we will look it up in the council record.');
+    };
+
+    const fail = m => {
+      msg.textContent = m;
+      msg.style.display = 'block';
+      result.style.display = 'none';
+    };
+
+    const listLocal = () => {
+      const list = load();
+      const wrap = q('[data-local]');
+      if (!list.length) { wrap.style.display = 'none'; return; }
+      wrap.style.display = 'flex';
+      q('[data-local-list]').innerHTML = list.map(r =>
+        '<button type="button" data-ref-btn="' + esc(r.ref) + '" style="display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;text-align:left;width:100%;min-height:56px;padding:14px 18px;border:1px solid #d7d7e2;background:#fff;color:#05065d;cursor:pointer;transition:border-color .25s"><span style="font-family:\'DM Mono\',ui-monospace,monospace;font-size:13px;letter-spacing:.04em">' + esc(r.ref) + '</span><span style="font-size:13.5px;color:#6e6f8c">' + esc(r.division || '') + ' · ' + esc(fmt(r.created)) + '</span></button>'
+      ).join('');
+      Array.prototype.slice.call(R.querySelectorAll('[data-ref-btn]')).forEach(b => {
+        on(b, 'click', () => {
+          input.value = b.getAttribute('data-ref-btn');
+          find(input.value);
+          result.scrollIntoView ? window.scrollTo({ top: result.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' }) : null;
+        });
+      });
+    };
+
+    on(q('[data-lookup]'), 'click', () => find(input.value));
+    on(input, 'keydown', e => { if (e.key === 'Enter') { e.preventDefault(); find(input.value); } });
+    on(q('[data-demo]'), 'click', () => { input.value = DEMO.ref; find(DEMO.ref); });
+
+    listLocal();
+    const fromHash = (location.hash || '').replace('#', '').trim();
+    if (fromHash) { input.value = fromHash.toUpperCase(); find(fromHash); }
+  }
+
+  componentWillUnmount() { (this.off || []).forEach(f => f()); }
+}
+</script>
+</body>
+</html>
