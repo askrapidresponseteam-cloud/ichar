@@ -1,0 +1,187 @@
+rules_version = '2';
+
+/* ICHAR case management.
+
+   Two kinds of caller:
+   1. The public website. Signs in anonymously and may only create a report,
+      a matching public tracking entry, and a pledge. It can read a single
+      tracking entry if it knows the reference. It can never read a case.
+   2. Staff. Have a document under /staff/{uid} with active set to true.
+      What they may do is decided by the role on that document. */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* ---------- helpers ---------- */
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function staffPath() {
+      return /databases/$(database)/documents/staff/$(request.auth.uid);
+    }
+
+    function isStaff() {
+      return signedIn()
+        && exists(staffPath())
+        && get(staffPath()).data.active == true;
+    }
+
+    function role() {
+      return get(staffPath()).data.role;
+    }
+
+    function hasRole(roles) {
+      return isStaff() && role() in roles;
+    }
+
+    function unchanged(field) {
+      return !(field in request.resource.data)
+        || request.resource.data[field] == resource.data[field];
+    }
+
+    /* ---------- staff records ---------- */
+
+    match /staff/{uid} {
+      // Anyone signed in may read their own record, which is how the portal
+      // finds out who they are. Staff may read the list to assign work.
+      allow get: if signedIn() && (request.auth.uid == uid || isStaff());
+      allow list: if isStaff();
+      allow write: if hasRole(['admin']);
+    }
+
+    /* ---------- cases ---------- */
+
+    match /cases/{caseId} {
+
+      function validIntake() {
+        let d = request.resource.data;
+        return d.keys().hasAll([
+            'ref', 'division', 'urgency', 'where', 'summary', 'anonymous',
+            'name', 'email', 'phone', 'affected', 'stage', 'status', 'source',
+            'created', 'assignedTo'
+          ])
+          && d.keys().hasOnly([
+            'ref', 'division', 'urgency', 'priority', 'where', 'when', 'summary',
+            'affected', 'ongoing', 'evidence', 'authority', 'anonymous', 'name',
+            'email', 'phone', 'relation', 'share', 'created', 'source', 'stage',
+            'status', 'office', 'assignedTo', 'assignedName', 'cell', 'publicNote',
+            'searchBlob', 'tags', 'firstActionedAt', 'nextAction', 'nextActionDate'
+          ])
+          && d.division in ['Human Rights', 'Animal Rights', 'Environmental Rights']
+          && d.urgency in ['Emergency', 'Urgent', 'Standard']
+          && d.stage == 1
+          && d.status == 'open'
+          && d.source == 'website'
+          && d.ref is string && d.ref.size() >= 10 && d.ref.size() <= 40
+          && d.summary is string && d.summary.size() >= 20 && d.summary.size() <= 6000
+          && d.where is string && d.where.size() > 0 && d.where.size() <= 300
+          && d.anonymous is bool
+          && d.name is string && d.name.size() <= 200
+          && d.email is string && d.email.size() <= 200
+          && d.phone is string && d.phone.size() <= 40
+          && d.affected is string && d.affected.size() <= 500
+          && d.evidence is list && d.evidence.size() <= 10
+          && d.assignedTo == null
+          && d.created == request.time;
+      }
+
+      // The public form may only ever add a new report.
+      allow create: if (signedIn() && validIntake()) || hasRole(['admin', 'director', 'legal', 'intake']);
+
+      allow read: if isStaff();
+
+      // Intake may triage but not push a file into legal action or close it.
+      allow update: if hasRole(['admin', 'director', 'legal'])
+        || (hasRole(['intake'])
+            && request.resource.data.stage <= 2
+            && request.resource.data.status == 'open'
+            && unchanged('summary')
+            && unchanged('created')
+            && unchanged('ref'));
+
+      allow delete: if hasRole(['admin']);
+
+      /* The chronological record. Entries are never edited or removed, so
+         that the file can be relied on later. */
+      match /timeline/{entryId} {
+        allow read: if isStaff();
+        allow create: if hasRole(['admin', 'director', 'legal', 'intake'])
+          && request.resource.data.byUid == request.auth.uid;
+        allow update, delete: if false;
+      }
+
+      match /files/{fileId} {
+        allow read: if isStaff();
+        allow create: if hasRole(['admin', 'director', 'legal', 'intake']);
+        allow delete: if hasRole(['admin', 'director', 'legal']);
+        allow update: if false;
+      }
+    }
+
+    /* ---------- public tracking entries ----------
+       Carries no personal data: no name, no contact details, no narrative.
+       A reference is needed to read one, and the collection cannot be listed. */
+
+    match /caseStatus/{ref} {
+      function validPublicEntry() {
+        let d = request.resource.data;
+        return d.stage == 1
+          && d.closed == false
+          && d.ref == ref
+          && d.keys().hasOnly([
+            'ref', 'division', 'office', 'stage', 'priority', 'where', 'when',
+            'created', 'publicNote', 'closed', 'outcome', 'updatedAt'
+          ]);
+      }
+
+      allow get: if true;
+      allow list: if isStaff();
+      allow create: if (signedIn() && validPublicEntry()) || isStaff();
+      allow update: if hasRole(['admin', 'director', 'legal', 'intake']);
+      allow delete: if hasRole(['admin']);
+    }
+
+    /* ---------- pledges ---------- */
+
+    match /pledges/{pledgeId} {
+      function validPledge() {
+        let d = request.resource.data;
+        return d.amount is number && d.amount >= 100 && d.amount <= 100000000
+          && d.frequency in ['One-time', 'Monthly']
+          && d.name is string && d.name.size() > 0 && d.name.size() <= 200
+          && d.email is string && d.email.size() <= 200
+          && d.status == 'Pledged'
+          && d.created == request.time
+          && d.keys().hasOnly(['ref', 'amount', 'frequency', 'designation', 'name',
+                               'email', 'created', 'status', 'receiptNo', 'note', 'source']);
+      }
+      allow create: if (signedIn() && validPledge()) || hasRole(['admin', 'director']);
+      allow read: if isStaff();
+      allow update: if hasRole(['admin', 'director']);
+      allow delete: if hasRole(['admin']);
+    }
+
+    /* ---------- activity log ----------
+       Written by the portal, never edited. Only leadership reads it. */
+
+    match /audit/{entryId} {
+      allow create: if isStaff() && request.resource.data.byUid == request.auth.uid;
+      allow read: if hasRole(['admin', 'director']);
+      allow update, delete: if false;
+    }
+
+    /* ---------- settings ---------- */
+
+    match /settings/{docId} {
+      allow read: if isStaff();
+      allow write: if hasRole(['admin']);
+    }
+
+    /* Anything not named above is closed. */
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

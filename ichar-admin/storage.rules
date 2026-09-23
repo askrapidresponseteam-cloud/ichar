@@ -1,0 +1,28 @@
+rules_version = '2';
+
+/* Papers attached to a case. Staff only, in both directions.
+   The public form never uploads: reporters are asked to bring their
+   evidence to the officer handling the file. */
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isStaff() {
+      return request.auth != null
+        && firestore.exists(/databases/(default)/documents/staff/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/staff/$(request.auth.uid)).data.active == true;
+    }
+
+    match /cases/{caseId}/{fileName} {
+      allow read: if isStaff();
+      allow write: if isStaff()
+        && request.resource.size < 25 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*|application/pdf|audio/.*|video/.*|text/.*|application/msword|application/vnd.*');
+      allow delete: if isStaff();
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

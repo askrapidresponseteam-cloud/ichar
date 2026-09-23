@@ -1,0 +1,49 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/ICHAR%20About.dc.html" },
+    { "source": "/council", "destination": "/ICHAR%20Council.dc.html" },
+    { "source": "/divisions", "destination": "/ICHAR%20Divisions.dc.html" },
+    { "source": "/report", "destination": "/ICHAR%20Report%20a%20Violation.dc.html" },
+    { "source": "/status", "destination": "/ICHAR%20Case%20Status.dc.html" },
+    { "source": "/donate", "destination": "/ICHAR%20Donate.dc.html" },
+    { "source": "/policies", "destination": "/ICHAR%20Policies.dc.html" }
+  ],
+  "redirects": [
+    { "source": "/ICHAR Home.dc.html", "destination": "/", "permanent": true },
+    { "source": "/ICHAR%20Home.dc.html", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/ICHAR About.dc.html", "destination": "/about", "permanent": true },
+    { "source": "/ICHAR%20About.dc.html", "destination": "/about", "permanent": true },
+    { "source": "/ICHAR Council.dc.html", "destination": "/council", "permanent": true },
+    { "source": "/ICHAR%20Council.dc.html", "destination": "/council", "permanent": true },
+    { "source": "/ICHAR Divisions.dc.html", "destination": "/divisions", "permanent": true },
+    { "source": "/ICHAR%20Divisions.dc.html", "destination": "/divisions", "permanent": true },
+    { "source": "/ICHAR Report a Violation.dc.html", "destination": "/report", "permanent": true },
+    { "source": "/ICHAR%20Report%20a%20Violation.dc.html", "destination": "/report", "permanent": true },
+    { "source": "/ICHAR Case Status.dc.html", "destination": "/status", "permanent": true },
+    { "source": "/ICHAR%20Case%20Status.dc.html", "destination": "/status", "permanent": true },
+    { "source": "/ICHAR Donate.dc.html", "destination": "/donate", "permanent": true },
+    { "source": "/ICHAR%20Donate.dc.html", "destination": "/donate", "permanent": true },
+    { "source": "/ICHAR Policies.dc.html", "destination": "/policies", "permanent": true },
+    { "source": "/ICHAR%20Policies.dc.html", "destination": "/policies", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

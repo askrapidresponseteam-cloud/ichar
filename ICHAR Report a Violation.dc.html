@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a Violation - ICHAR</title>
+<meta name="description" content="File a report with ICHAR in about five minutes. It can be made anonymously.">
+<meta name="theme-color" content="#05065d">
+<link rel="icon" type="image/webp" href="/assets/ichar-logo-400.webp">
+<link rel="canonical" href="https://ichar.org/report">
+<meta property="og:title" content="Report a Violation - ICHAR">
+<meta property="og:description" content="File a report with ICHAR in about five minutes. It can be made anonymously.">
+<meta property="og:type" content="website">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -233,7 +241,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
     <div style="border:1px solid #d7d7e2;padding:24px">
       <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0 0 12px">Confidentiality</h3>
       <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#343554;text-wrap:pretty">Information lodged with ICHAR stays within the system and is not shared outside it unless you authorise it, or the law requires it.</p>
-      <a href="ICHAR%20Policies.dc.html#privacy" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Read the privacy note <span aria-hidden="true">↗</span></a>
+      <a href="/policies#privacy" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Read the privacy note <span aria-hidden="true">↗</span></a>
     </div>
   </aside>
 </section>
@@ -250,7 +258,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
       </div>
       <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:#343554;max-width:56ch;text-wrap:pretty">Keep this reference. It is stored on this device so you can track the application, and intake quotes it in every reply.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px">
-        <a data-track="" href="ICHAR%20Case%20Status.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;background:#d90a05;color:#fff;padding:14px 22px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .35s" style-hover="transform:translateY(-4px);color:#fff">Track this application <span aria-hidden="true">↗</span></a>
+        <a data-track="" href="/status" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;background:#d90a05;color:#fff;padding:14px 22px;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:transform .35s" style-hover="transform:translateY(-4px);color:#fff">Track this application <span aria-hidden="true">↗</span></a>
         <button data-another="" type="button" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 20px;border:1px solid #05065d;background:transparent;color:#05065d;cursor:pointer;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Report something else</button>
       </div>
     </div>
@@ -422,7 +430,7 @@ class Component extends DCLogic {
       store(rec);
       q('[data-ref]').textContent = ref;
       q('[data-refmeta]').textContent = state.division + ' · ' + state.urgency.toLowerCase() + ' · logged ' + new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-      q('[data-track]').setAttribute('href', 'ICHAR%20Case%20Status.dc.html#' + ref);
+      q('[data-track]').setAttribute('href', '/status#' + ref);
       form.parentNode.style.display = 'none';
       done.style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });

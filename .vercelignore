@@ -1,0 +1,8 @@
+# Bundled and offline exports. They duplicate the home page, weigh several
+# megabytes, and would be indexed as separate copies of the same content.
+ICHAR Home (standalone).html
+ICHAR Home -offline-src-.html
+.thumbnail
+.backup
+uploads
+clean-urls.mjs
