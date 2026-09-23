@@ -125,3 +125,22 @@ link on every page works, that no page still links to a `.dc.html` URL, and
 that every page has a title. Thirty four checks, all passing on this build.
 
 It needs nothing installed.
+
+## House style: no long dashes
+
+`clean-urls.mjs` also replaces every em dash, en dash and other long dash with a
+plain hyphen, in the page copy, in the inline scripts and in `support.js`. The
+original export had 97 of them, mostly in body copy such as "Clearing site data
+removes the list - the council's own record is unaffected", and a handful as the
+placeholder for an empty field on the tracking page.
+
+It runs as part of the same command as the link rewrite, because an export from
+the page builder brings them straight back. Run it after every export and the
+site stays in style.
+
+The script itself names the characters it removes as `\u2014` escape sequences,
+so it contains no long dash characters of its own.
+
+`support.js` is generated vendor code with a "do not edit" header. The dashes in
+it are all in comments, so nothing functional changed, but if you ever replace
+that file the script will need to run again.

@@ -1,8 +1,20 @@
-# Bundled and offline exports. They duplicate the home page, weigh several
-# megabytes, and would be indexed as separate copies of the same content.
+# The Firebase admin portal lives in this repo but deploys to Firebase
+# Hosting, not Vercel. Keep it out of the public site.
+ichar-admin
+
+# Bundled and offline exports. They duplicate the home page and would be
+# indexed as separate copies of the same content.
 ICHAR Home (standalone).html
 ICHAR Home -offline-src-.html
 .thumbnail
 .backup
+
+# Source material that no page links to. If you ever link to
+# uploads/ICHAR.pdf from the site, delete the next line.
 uploads
+
+# Build scripts, not part of the site.
 clean-urls.mjs
+verify.mjs
+CLEAN-URLS.md
+PUSH.md

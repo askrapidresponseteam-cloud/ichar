@@ -4,12 +4,14 @@
 
      node clean-urls.mjs .
 
-   It changes two things in the HTML files:
+   It changes three things:
 
    1. Every internal link becomes a clean path. "ICHAR%20About.dc.html#offices"
       becomes "/about#offices". Fragments are kept.
    2. Each page gets a <title>, a description and a favicon link, because the
       exported pages have none. Pages with a title already are left alone.
+   3. Every em dash, en dash and other long dash becomes a plain hyphen, in the
+      page copy and in the scripts.
 
    It does not rename any file. The component runtime fetches the nav and the
    footer by their exact file names, and a renamed export would have to be
@@ -114,15 +116,44 @@ function addHead(html, page) {
   return html.replace(/<meta name="viewport"[^>]*>/i, m => m + '\n' + head);
 }
 
+/* Every long dash becomes a plain hyphen. House style, applied everywhere:
+   page copy, placeholder strings, code comments.
+
+   A straight character swap is right for both spellings. " x - y " keeps its
+   spaces and "x-y" stays closed up, so nothing needs re-spacing afterwards.
+
+   The exported pages bring em dashes back every time they are exported, which
+   is why this runs as part of the same command rather than being a one off. */
+const LONG_DASHES = [
+  '\u2012', '\u2013', '\u2014', '\u2015', '\u2212',
+  '\u2E3A', '\u2E3B', '\uFE58', '\uFF0D'
+];
+
+function stripDashes(text) {
+  let out = text;
+  LONG_DASHES.forEach(d => { out = out.split(d).join('-'); });
+  /* The same characters written as HTML entities or JavaScript escapes. */
+  out = out.replace(/&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;/gi, '-');
+  out = out.replace(/\\u201[2345]|\\u2212/g, '-');
+  return out;
+}
+
 let changed = 0;
-const files = readdirSync(dir).filter(f => f.endsWith('.html'));
+const files = readdirSync(dir).filter(f => f.endsWith('.html') || f.endsWith('.js'));
+if (existsSync(join(dir, 'assets', 'site.js'))) files.push(join('assets', 'site.js'));
 
 files.forEach(f => {
+  if (f === 'clean-urls.mjs' || f === 'verify.mjs') return;
   const full = join(dir, f);
   const before = readFileSync(full, 'utf8');
   const page = PAGES.find(p => p.file === f);
-  let after = rewriteLinks(before);
-  if (page) after = addHead(after, page);
+  let after = before;
+
+  if (f.endsWith('.html')) {
+    after = rewriteLinks(after);
+    if (page) after = addHead(after, page);
+  }
+  after = stripDashes(after);
 
   if (after !== before) {
     changed++;

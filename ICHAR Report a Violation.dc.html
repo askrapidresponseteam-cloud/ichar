@@ -133,7 +133,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
       <div style="border:1px dashed #c9c9d6;background:repeating-linear-gradient(135deg,#f4f4f8 0 10px,#fbfbfd 10px 20px);padding:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
         <div>
           <strong style="display:block;font-size:14px;margin-bottom:6px">File upload</strong>
-          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.6;color:#6e6f8c">Secure upload is pending — intake will email you an upload link</span>
+          <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.6;color:#6e6f8c">Secure upload is pending - intake will email you an upload link</span>
         </div>
         <a href="mailto:info.ichar@gmail.com?subject=Evidence%20for%20my%20application" style="display:inline-flex;align-items:center;min-height:44px;padding:12px 16px;border:1px solid #05065d;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Email evidence</a>
       </div>
@@ -267,7 +267,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
       <div style="display:flex;flex-direction:column">
         <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Within 48 hours</strong><span style="font-size:14px;line-height:1.55;color:#343554">Intake confirms the division and the office handling it.</span></div>
         <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Within a week</strong><span style="font-size:14px;line-height:1.55;color:#343554">A legal officer tells you which provisions the facts support, and what is missing.</span></div>
-        <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Then</strong><span style="font-size:14px;line-height:1.55;color:#343554">Documentation, filing or escalation — tracked against your reference.</span></div>
+        <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Then</strong><span style="font-size:14px;line-height:1.55;color:#343554">Documentation, filing or escalation - tracked against your reference.</span></div>
         <div style="padding:14px 0;border-top:1px solid #d7d7e2"><strong style="display:block;font-size:14px;margin-bottom:5px">Emergencies</strong><span style="font-size:14px;line-height:1.55;color:#343554">Flagged applications are reviewed the same day by the duty officer.</span></div>
       </div>
     </div>
@@ -362,10 +362,10 @@ class Component extends DCLogic {
       const ev = evidence();
       const anonymous = anon.checked;
       review.innerHTML =
-        row('Division', esc(state.division || '—')) +
+        row('Division', esc(state.division || '-')) +
         row('Urgency', esc(state.urgency)) +
-        row('Incident', esc(val('summary') || '—')) +
-        row('Where', esc(val('where') || '—')) +
+        row('Incident', esc(val('summary') || '-')) +
+        row('Where', esc(val('where') || '-')) +
         row('When', esc(val('when') || 'Not given')) +
         row('Affected', esc(val('affected') || 'Not given')) +
         row('Ongoing', field('ongoing').checked ? 'Yes, still happening' : 'No') +

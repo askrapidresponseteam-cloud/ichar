@@ -81,7 +81,7 @@ input::placeholder{color:#9a9ab0}
     <div data-local="" style="display:none;flex-direction:column;gap:12px">
       <h3 style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.1em;color:#6e6f8c;margin:0">Applications from this device</h3>
       <div data-local-list="" style="display:flex;flex-direction:column;gap:8px"></div>
-      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#9a9ab0">Stored only in this browser. Clearing site data removes the list — the council's own record is unaffected.</p>
+      <p style="margin:0;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;line-height:1.7;color:#9a9ab0">Stored only in this browser. Clearing site data removes the list - the council's own record is unaffected.</p>
     </div>
   </div>
 
@@ -159,7 +159,7 @@ class Component extends DCLogic {
     };
 
     const fmt = iso => {
-      if (!iso) return '—';
+      if (!iso) return '-';
       const d = new Date(iso);
       if (isNaN(d)) return iso;
       return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
@@ -174,14 +174,14 @@ class Component extends DCLogic {
       badge.textContent = STAGES[stage - 1].name;
       badge.style.background = stage >= 3 ? '#05065d' : '#d90a05';
       q('[data-r-meta]').innerHTML =
-        cell('Division', esc(rec.division || '—')) +
-        cell('Office', esc(rec.office || (rec.division ? 'Head Office, New Delhi' : '—'))) +
+        cell('Division', esc(rec.division || '-')) +
+        cell('Office', esc(rec.office || (rec.division ? 'Head Office, New Delhi' : '-'))) +
         cell('Incident date', esc(rec.when ? fmt(rec.when) : 'Not given')) +
-        cell('Place', esc(rec.where || '—')) +
+        cell('Place', esc(rec.where || '-')) +
         cell('Logged', esc(fmt(rec.created))) +
         cell('Priority', esc(rec.urgency || 'Standard')) +
         (rec.summary ? '<div style="flex:1 1 100%;padding:18px clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea"><span style="display:block;font-family:\'DM Mono\',ui-monospace,monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#6e6f8c;margin-bottom:7px">As reported</span><span style="display:block;font-size:14.5px;line-height:1.6;color:#343554">' + esc(rec.summary) + '</span></div>' : '') +
-        (rec.demo ? '<div style="flex:1 1 100%;padding:14px clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea;background:#f4f4f8;font-family:\'DM Mono\',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;color:#8d0b5e">Sample record — illustrative only</div>' : '');
+        (rec.demo ? '<div style="flex:1 1 100%;padding:14px clamp(22px,2.6vw,32px);border-top:1px solid #e2e2ea;background:#f4f4f8;font-family:\'DM Mono\',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;color:#8d0b5e">Sample record - illustrative only</div>' : '');
 
       q('[data-r-timeline]').innerHTML = STAGES.map((s, i) => {
         const nDone = i + 1 < stage, isNow = i + 1 === stage;
