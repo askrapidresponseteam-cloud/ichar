@@ -144,3 +144,36 @@ so it contains no long dash characters of its own.
 `support.js` is generated vendor code with a "do not edit" header. The dashes in
 it are all in comments, so nothing functional changed, but if you ever replace
 that file the script will need to run again.
+
+## Spacing and the display headings
+
+The headings were set in `'Arial Narrow', Impact, 'Arial Black', sans-serif`
+with leading as tight as .82 and tracking at -.055em.
+
+None of those three faces exists on iOS or Android. On a phone the stack fell
+all the way through to plain Helvetica or Roboto, a normal width face, carrying
+sizes and negative tracking that had been measured against a condensed one. That
+is why the headings looked correct on the Mac they were designed on and jammed
+on a phone. "ENVIRONMENTAL" at the 40px floor came to about 327px in the
+fallback face, against 280px of usable width on a 320px screen, so it also ran
+off the side.
+
+Three changes, applied by `clean-urls.mjs` and `assets/type.css`:
+
+**Archivo Narrow goes in front of the stack**, requested on the Google Fonts
+line the pages already load, so it costs no extra round trip. It is a condensed
+grotesque close to Arial Narrow Bold, which is what the design was drawn
+against. Every device now draws the headline at the intended width.
+
+**Leading floored at .92**, applied to 126 inline styles. Caps stand about .72em
+tall, so .92 leaves a .20em gap between lines. At .82 that gap is .10em, which
+is the collapsed look in the screenshot. Anything already at .92 or above was
+left alone, so the hierarchy is unchanged.
+
+**`assets/type.css`** handles what an inline style cannot: it opens the leading
+further and releases most of the negative tracking below 700px and again below
+420px, caps the largest headings on screens under 380px, stops any long word
+pushing the page sideways, gives tap targets 44px on touch devices, and lets
+wide tables scroll inside themselves.
+
+Run the script after every export and the corrections come back with it.

@@ -12,6 +12,8 @@
       exported pages have none. Pages with a title already are left alone.
    3. Every em dash, en dash and other long dash becomes a plain hyphen, in the
       page copy and in the scripts.
+   4. The display headings get a condensed webfont that exists on phones, and
+      leading no tighter than .92. See fixType below for why.
 
    It does not rename any file. The component runtime fetches the nav and the
    footer by their exact file names, and a renamed export would have to be
@@ -138,6 +140,72 @@ function stripDashes(text) {
   return out;
 }
 
+/* ---------------------------------------------------------------
+   Typography and spacing.
+
+   The display headings are set in 'Arial Narrow', with Impact and Arial Black
+   behind it. None of those three exist on iOS or Android, so on a phone the
+   stack falls all the way through to plain Helvetica or Roboto: a normal width
+   face carrying sizes and -.055em tracking that were measured against a
+   condensed one. That is why the headings look jammed on a phone and fine on
+   the Mac they were designed on.
+
+   Archivo Narrow goes in front. It is a condensed grotesque close to Arial
+   Narrow Bold, it is already on the Google Fonts request the pages make, and
+   it means every device draws the headline at the width the design assumed.
+
+   Leading is floored at .92. Caps sit about .72em tall, so .92 leaves a .20em
+   gap between lines. At .82 that gap is .10em, which is the collapsed look in
+   the screenshot. Anything already at .92 or above is left alone.
+   --------------------------------------------------------------- */
+
+const OLD_STACK = "'Arial Narrow',Impact,'Arial Black',sans-serif";
+const NEW_STACK = "'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif";
+const LEADING_FLOOR = 0.92;
+
+/* The new stack contains the old one, so a plain replace would prefix an
+   already prefixed stack on every run. Splitting on the finished form first
+   means only the untouched segments are rewritten, which makes this safe to
+   run as many times as you like. */
+function prefixStack(text, oldStack, newStack) {
+  return text.split(newStack)
+    .map(part => part.split(oldStack).join(newStack))
+    .join(newStack);
+}
+
+function fixType(html) {
+  let out = html;
+
+  /* 1. Put a real condensed face at the front of the display stack. */
+  out = prefixStack(out, OLD_STACK, NEW_STACK);
+  out = prefixStack(out, OLD_STACK.replace(/'/g, "\\'"), NEW_STACK.replace(/'/g, "\\'"));
+
+  /* 2. Ask Google Fonts for it on the request the page already makes, so this
+        costs no extra round trip. */
+  out = out.replace(/(fonts\.googleapis\.com\/css2\?)([^"']*?)(&display=swap)/g,
+    (m, head, families, tail) =>
+      families.includes('Archivo+Narrow') ? m
+        : head + families + '&family=Archivo+Narrow:wght@600;700' + tail);
+
+  /* 3. Load the corrections stylesheet, which handles what an inline style
+        cannot: screen width and overflow. */
+  if (!out.includes('assets/type.css') && /<\/head>/i.test(out)) {
+    out = out.replace(/<\/head>/i, '<link rel="stylesheet" href="/assets/type.css">\n</head>');
+  }
+  /* The exported pages keep their head tags inside a <helmet> block. */
+  if (!out.includes('assets/type.css') && /<\/helmet>/i.test(out)) {
+    out = out.replace(/<\/helmet>/i, '<link rel="stylesheet" href="/assets/type.css">\n</helmet>');
+  }
+
+  /* 4. Floor the leading on every heading that sits below it. */
+  out = out.replace(/line-height:\s*(\.\d+|0\.\d+)/g, (m, v) => {
+    const n = parseFloat(v);
+    return n < LEADING_FLOOR ? 'line-height:' + LEADING_FLOOR : m;
+  });
+
+  return out;
+}
+
 let changed = 0;
 const files = readdirSync(dir).filter(f => f.endsWith('.html') || f.endsWith('.js'));
 if (existsSync(join(dir, 'assets', 'site.js'))) files.push(join('assets', 'site.js'));
@@ -152,6 +220,7 @@ files.forEach(f => {
   if (f.endsWith('.html')) {
     after = rewriteLinks(after);
     if (page) after = addHead(after, page);
+    after = fixType(after);
   }
   after = stripDashes(after);
 

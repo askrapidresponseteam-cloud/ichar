@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<link rel="stylesheet" href="/assets/type.css">
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -56,11 +57,11 @@ button{font:inherit}
 <div data-nav="" style="position:fixed;inset:0;z-index:90;background:#fbfbfd;transform:translateY(-102%);visibility:hidden;overflow-y:auto;display:flex;align-items:center;padding:clamp(84px,12vh,130px) clamp(20px,8vw,110px) clamp(36px,8vh,80px);transition:transform .7s cubic-bezier(.76,0,.24,1)">
   <div style="width:100%;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,60px);align-items:flex-end">
     <nav style="flex:1 1 320px;min-width:0">
-      <a data-key="about" href="/about" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">About</a>
-      <a data-key="divisions" href="/divisions" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">Divisions</a>
-      <a data-key="council" href="/council" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">The Council</a>
-      <a data-key="report" href="/report" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0 0 .1em">Report</a>
-      <a data-key="donate" href="/donate" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:.86;letter-spacing:-.05em;margin:0;color:#d90a05">Donate</a>
+      <a data-key="about" href="/about" style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:0.92;letter-spacing:-.05em;margin:0 0 .1em">About</a>
+      <a data-key="divisions" href="/divisions" style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:0.92;letter-spacing:-.05em;margin:0 0 .1em">Divisions</a>
+      <a data-key="council" href="/council" style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:0.92;letter-spacing:-.05em;margin:0 0 .1em">The Council</a>
+      <a data-key="report" href="/report" style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:0.92;letter-spacing:-.05em;margin:0 0 .1em">Report</a>
+      <a data-key="donate" href="/donate" style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(40px,8vw,112px);line-height:0.92;letter-spacing:-.05em;margin:0;color:#d90a05">Donate</a>
     </nav>
     <div style="flex:1 1 260px;min-width:0;max-width:420px;font-size:14px;line-height:1.7">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;color:#6e6f8c">Peace · Compassion · Justice</div>
@@ -95,20 +96,20 @@ button{font:inherit}
   <div style="display:flex;flex-wrap:wrap;gap:clamp(34px,7vw,110px);align-items:center">
     <div data-reveal="" style="flex:1 1 360px;min-width:0">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px;color:#6e6f8c">One council, three divisions</div>
-      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.8vw,94px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 22px;text-wrap:balance">Rights Are Not Separate Systems</h2>
+      <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.8vw,94px);line-height:0.92;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 22px;text-wrap:balance">Rights Are Not Separate Systems</h2>
       <p style="font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#343554;max-width:520px;margin:0 0 14px;text-wrap:pretty">To defend rights, prevent injustice, and drive systemic change through law, awareness, and global cooperation. The same failures harm people, animals and the land, so we keep all three under one legal framework and a case never falls between departments.</p>
       <p style="font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#6e6f8c;max-width:520px;margin:0;text-wrap:pretty">We are a rights institution, not a protest collective, a religious body, or a single-issue NGO.</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin:clamp(26px,4vw,42px) 0 24px">
         <div style="flex:1 1 130px;background:#f0eff5;padding:20px 16px;min-height:104px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
-          <strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,44px);line-height:.9;letter-spacing:-.04em">03</strong>
+          <strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,44px);line-height:0.92;letter-spacing:-.04em">03</strong>
           <small style="display:block;font-size:11px;line-height:1.3;color:#5d5e78;margin-top:10px">Divisions under one council</small>
         </div>
         <div style="flex:1 1 130px;background:#f0eff5;padding:20px 16px;min-height:104px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
-          <strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,44px);line-height:.9;letter-spacing:-.04em">04</strong>
+          <strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,44px);line-height:0.92;letter-spacing:-.04em">04</strong>
           <small style="display:block;font-size:11px;line-height:1.3;color:#5d5e78;margin-top:10px">Offices across India</small>
         </div>
         <div style="flex:1 1 130px;background:#f0eff5;padding:20px 16px;min-height:104px;transition:transform .4s,background .4s" style-hover="transform:translateY(-8px);background:#ffe7e5">
-          <strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,44px);line-height:.9;letter-spacing:-.04em">09</strong>
+          <strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,44px);line-height:0.92;letter-spacing:-.04em">09</strong>
           <small style="display:block;font-size:11px;line-height:1.3;color:#5d5e78;margin-top:10px">Seats on the governing council</small>
         </div>
       </div>
@@ -130,7 +131,7 @@ button{font:inherit}
   <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(26px,4vw,45px)">
     <div style="flex:1 1 260px;min-width:0">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Where a case begins</div>
-      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(46px,5.8vw,94px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;color:#05065d">Divisions</h2>
+      <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(46px,5.8vw,94px);line-height:0.92;letter-spacing:-.05em;text-transform:uppercase;margin:0;color:#05065d">Divisions</h2>
     </div>
     <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#6e6f8c;flex:0 0 auto">Drag / scroll →</div>
   </div>
@@ -139,7 +140,7 @@ button{font:inherit}
       <span style="display:block;height:10px;background:#d90a05"></span>
       <div style="padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:16px;flex:1">
         <div style="display:flex;gap:14px;justify-content:space-between;align-items:flex-start">
-          <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,45px);line-height:.9;letter-spacing:-.045em;margin:0;max-width:11ch">Human Rights</h3>
+          <h3 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,45px);line-height:0.92;letter-spacing:-.045em;margin:0;max-width:11ch">Human Rights</h3>
           <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;flex:0 0 auto;padding-top:6px">01</span>
         </div>
         <p style="margin:0;max-width:40ch;font-size:14px;line-height:1.6;color:inherit">We document and legally challenge violations against women and children under the Bharatiya Nyaya Sanhita, 2023, so that dignity and safety are enforced as rights rather than requested as favours.</p>
@@ -152,7 +153,7 @@ button{font:inherit}
       <span style="display:block;height:10px;background:#ff4c23"></span>
       <div style="padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:16px;flex:1">
         <div style="display:flex;gap:14px;justify-content:space-between;align-items:flex-start">
-          <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,45px);line-height:.9;letter-spacing:-.045em;margin:0;max-width:11ch">Animal Rights</h3>
+          <h3 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,45px);line-height:0.92;letter-spacing:-.045em;margin:0;max-width:11ch">Animal Rights</h3>
           <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;flex:0 0 auto;padding-top:6px">02</span>
         </div>
         <p style="margin:0;max-width:40ch;font-size:14px;line-height:1.6;color:inherit">We work to prevent cruelty, exploitation and illegal killing by enforcing India's animal protection laws and the constitutional duty of compassion towards living creatures.</p>
@@ -165,7 +166,7 @@ button{font:inherit}
       <span style="display:block;height:10px;background:#8d0b5e"></span>
       <div style="padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:16px;flex:1">
         <div style="display:flex;gap:14px;justify-content:space-between;align-items:flex-start">
-          <h3 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,45px);line-height:.9;letter-spacing:-.045em;margin:0;max-width:11ch">Environmental Rights</h3>
+          <h3 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,3.4vw,45px);line-height:0.92;letter-spacing:-.045em;margin:0;max-width:11ch">Environmental Rights</h3>
           <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;flex:0 0 auto;padding-top:6px">03</span>
         </div>
         <p style="margin:0;max-width:40ch;font-size:14px;line-height:1.6;color:inherit">We protect the right to a clean, safe and sustainable environment by enforcing India's environmental laws and the constitutional duties that sit behind them.</p>
@@ -179,7 +180,7 @@ button{font:inherit}
 
 <section id="work" data-screen-label="What we act on" style="padding:clamp(60px,9vw,130px) clamp(20px,7vw,110px);scroll-margin-top:80px">
   <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:22px">
-    <h2 style="flex:1 1 260px;min-width:0;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,5.2vw,82px);line-height:.88;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">What We Act On</h2>
+    <h2 style="flex:1 1 260px;min-width:0;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,5.2vw,82px);line-height:0.92;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">What We Act On</h2>
     <div style="display:flex;align-items:center;gap:8px;flex:0 0 auto">
       <span data-count="" style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;color:#6e6f8c;margin-right:10px">01 / 03</span>
       <button data-prev="" type="button" aria-label="Previous division" style="width:52px;height:48px;border:0;background:#eeeef4;color:#05065d;cursor:pointer;font-size:16px;transition:background .3s,color .3s" style-hover="background:#05065d;color:#fff">←</button>
@@ -191,7 +192,7 @@ button{font:inherit}
       <div style="display:flex;flex-wrap:wrap;gap:20px">
         <div style="flex:1.1 1 min(100%,340px);min-width:0;min-height:clamp(200px,28vw,380px);background:linear-gradient(150deg,#d90a05,#4b0206);color:#fff;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:30px">
           <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase">Division 01 · Women &amp; Child Rights</span>
-          <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,6vw,92px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase">Human<br>Rights</span>
+          <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,6vw,92px);line-height:0.92;letter-spacing:-.055em;text-transform:uppercase">Human<br>Rights</span>
         </div>
         <div style="flex:1 1 min(100%,300px);min-width:0;background:#eeeef4;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;gap:22px">
           <div style="display:flex;flex-direction:column">
@@ -209,7 +210,7 @@ button{font:inherit}
       <div style="display:flex;flex-wrap:wrap;gap:20px">
         <div style="flex:1.1 1 min(100%,340px);min-width:0;min-height:clamp(200px,28vw,380px);background:linear-gradient(150deg,#ff4c23,#571002);color:#fff;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:30px">
           <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase">Division 02 · Cruelty &amp; Wildlife</span>
-          <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,6vw,92px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase">Animal<br>Rights</span>
+          <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,6vw,92px);line-height:0.92;letter-spacing:-.055em;text-transform:uppercase">Animal<br>Rights</span>
         </div>
         <div style="flex:1 1 min(100%,300px);min-width:0;background:#eeeef4;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;gap:22px">
           <div style="display:flex;flex-direction:column">
@@ -227,7 +228,7 @@ button{font:inherit}
       <div style="display:flex;flex-wrap:wrap;gap:20px">
         <div style="flex:1.1 1 min(100%,340px);min-width:0;min-height:clamp(200px,28vw,380px);background:linear-gradient(150deg,#8d0b5e,#2a0220);color:#fff;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:30px">
           <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase">Division 03 · Pollution &amp; Land</span>
-          <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,6vw,92px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase">Environmental<br>Rights</span>
+          <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,6vw,92px);line-height:0.92;letter-spacing:-.055em;text-transform:uppercase">Environmental<br>Rights</span>
         </div>
         <div style="flex:1 1 min(100%,300px);min-width:0;background:#eeeef4;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;gap:22px">
           <div style="display:flex;flex-direction:column">
@@ -248,26 +249,26 @@ button{font:inherit}
   <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(24px,4vw,40px)">
     <div style="flex:1 1 300px;min-width:0">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Nine seats, filled by practising lawyers</div>
-      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">The Council</h2>
+      <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.4vw,88px);line-height:0.92;letter-spacing:-.05em;text-transform:uppercase;margin:0;text-wrap:balance">The Council</h2>
     </div>
     <p style="flex:1 1 280px;min-width:0;max-width:44ch;margin:0;font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#343554;text-wrap:pretty">A governing council of seven to eleven members sets policy; each division is led by someone who argues its cases.</p>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:#d7d7e2;border:1px solid #d7d7e2">
     <a data-reveal="" href="/council#aswin" style="background:#f4f4f8;padding:0;display:flex;flex-direction:column;transition:background .35s" style-hover="background:#ffe7e5">
       <div style="aspect-ratio:4/5;background:#e4e4ec;overflow:hidden"><img src="assets/aswin.jpg" alt="Aswin Karthik S" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%"></div>
-      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Aswin Karthik S</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Chairperson cum Founder</span></div>
+      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Aswin Karthik S</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Chairperson cum Founder</span></div>
     </a>
     <a data-reveal="" href="/council#prem" style="background:#f4f4f8;padding:0;display:flex;flex-direction:column;transition:background .35s" style-hover="background:#ffe7e5">
       <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#e4e4ec 0 9px,#eeeef4 9px 18px);display:flex;align-items:flex-end;padding:12px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#8a8a9e">portrait pending</span></div>
-      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Prem</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Vice Chairperson · Supreme Court</span></div>
+      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Prem</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Vice Chairperson · Supreme Court</span></div>
     </a>
     <a data-reveal="" href="/council#ashish" style="background:#f4f4f8;padding:0;display:flex;flex-direction:column;transition:background .35s" style-hover="background:#ffe7e5">
       <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#e4e4ec 0 9px,#eeeef4 9px 18px);display:flex;align-items:flex-end;padding:12px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#8a8a9e">portrait pending</span></div>
-      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Ashish</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Secretary, Human Rights · Delhi HC</span></div>
+      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Ashish</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Secretary, Human Rights · Delhi HC</span></div>
     </a>
     <a data-reveal="" href="/council#subbulakshmi" style="background:#f4f4f8;padding:0;display:flex;flex-direction:column;transition:background .35s" style-hover="background:#ffe7e5">
       <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#e4e4ec 0 9px,#eeeef4 9px 18px);display:flex;align-items:flex-end;padding:12px"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#8a8a9e">portrait pending</span></div>
-      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Subbulakshmi</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Secretary, Animal Rights · Kolkata</span></div>
+      <div style="padding:16px 14px 20px"><strong style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:26px;line-height:.98;letter-spacing:-.035em">Subbulakshmi</strong><span style="display:block;font-size:12px;line-height:1.5;color:#5d5e78;margin-top:8px">Secretary, Animal Rights · Kolkata</span></div>
     </a>
   </div>
   <a href="/council" style="display:inline-flex;align-items:center;gap:14px;min-height:44px;margin-top:24px;font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em">All nine seats, and how the council is governed <span aria-hidden="true" style="font-size:16px">↗</span></a>
@@ -278,24 +279,24 @@ button{font:inherit}
     <div data-reveal="" style="flex:1 1 300px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:#ffffff26">
       <div style="background:#1b0206;aspect-ratio:1.5/1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:6px;transition:background .35s" style-hover="background:#3a0409">
         <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#ff8f86">Head Office</span>
-        <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:.9;letter-spacing:-.04em">New Delhi</span>
+        <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:0.92;letter-spacing:-.04em">New Delhi</span>
       </div>
       <div style="background:#1b0206;aspect-ratio:1.5/1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:6px;transition:background .35s" style-hover="background:#3a0409">
         <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b9a3a3">Branch</span>
-        <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:.9;letter-spacing:-.04em">Chennai</span>
+        <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:0.92;letter-spacing:-.04em">Chennai</span>
       </div>
       <div style="background:#1b0206;aspect-ratio:1.5/1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:6px;transition:background .35s" style-hover="background:#3a0409">
         <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b9a3a3">Branch</span>
-        <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:.9;letter-spacing:-.04em">Mumbai</span>
+        <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:0.92;letter-spacing:-.04em">Mumbai</span>
       </div>
       <div style="background:#1b0206;aspect-ratio:1.5/1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:6px;transition:background .35s" style-hover="background:#3a0409">
         <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b9a3a3">Branch</span>
-        <span style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:.9;letter-spacing:-.04em">Kolkata</span>
+        <span style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(26px,2.6vw,34px);line-height:0.92;letter-spacing:-.04em">Kolkata</span>
       </div>
     </div>
     <div data-reveal="" style="flex:1 1 280px;min-width:0">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:#d3bcbc">Present where it matters</div>
-      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.2vw,86px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 18px;text-wrap:balance">Local Cells, One Council</h2>
+      <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,5.2vw,86px);line-height:0.92;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 18px;text-wrap:balance">Local Cells, One Council</h2>
       <p style="font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#ddd0d0;max-width:520px;margin:0 0 14px;text-wrap:pretty">Cases are filed where they happen, by people who know the local authority, with the council behind them. Each branch carries the same units as the head office, at branch scale.</p>
       <p style="font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#b9a3a3;max-width:520px;margin:0 0 22px;text-wrap:pretty">B108, Phase 1 Enclave, Chattarpur, New Delhi 110074</p>
       <a href="/about#offices" style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em;display:inline-flex;align-items:center;gap:14px;min-height:44px;color:#fff">How the offices are structured <span aria-hidden="true" style="font-size:16px">↗</span></a>
@@ -305,7 +306,7 @@ button{font:inherit}
 
 <section id="report" data-screen-label="Report CTA" style="padding:clamp(64px,10vw,150px) clamp(20px,7vw,110px);scroll-margin-top:80px;background:radial-gradient(circle at 80% 20%,#ed1c1626,transparent 30%),radial-gradient(circle at 15% 80%,#8d0b5e1f,transparent 35%),#fff">
   <div data-reveal="" style="border-top:1px solid #05065d;padding-top:30px;display:flex;flex-wrap:wrap;gap:clamp(28px,6vw,90px)">
-    <h2 style="flex:1 1 min(100%,320px);min-width:0;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(52px,9vw,140px);line-height:.82;letter-spacing:-.055em;margin:0">Report a<br>Violation</h2>
+    <h2 style="flex:1 1 min(100%,320px);min-width:0;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(52px,9vw,140px);line-height:0.92;letter-spacing:-.055em;margin:0">Report a<br>Violation</h2>
     <div style="flex:1 1 min(100%,290px);min-width:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">No complete file needed</div>
       <p style="font-size:clamp(13px,1.05vw,15px);line-height:1.65;color:#343554;max-width:520px;margin:0 0 14px;text-wrap:pretty">Tell us what you know. We route it to the right division and tell you what can be filed.</p>

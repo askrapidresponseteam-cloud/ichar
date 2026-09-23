@@ -12,13 +12,14 @@
 <meta property="og:description" content="File a report with ICHAR in about five minutes. It can be made anonymously.">
 <meta property="og:type" content="website">
 <script src="./support.js"></script>
+<link rel="stylesheet" href="/assets/type.css">
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -44,7 +45,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
 <main id="top">
 <section data-invert="" data-screen-label="Report masthead" style="background:radial-gradient(circle at 14% 10%,#ed1c1655 0,transparent 42%),linear-gradient(180deg,#2a0207,#05060b 82%);color:#fff;padding:clamp(116px,16vh,180px) clamp(20px,7vw,110px) clamp(38px,6vw,64px)">
   <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:#ff8f86">Application · no complete file needed</div>
-  <h1 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,8.5vw,132px);line-height:.84;letter-spacing:-.055em;text-transform:uppercase;margin:0 0 22px;max-width:14ch;text-wrap:balance;animation:ichRise .9s both">Report a Violation</h1>
+  <h1 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(44px,8.5vw,132px);line-height:0.92;letter-spacing:-.055em;text-transform:uppercase;margin:0 0 22px;max-width:14ch;text-wrap:balance;animation:ichRise .9s both">Report a Violation</h1>
   <p style="max-width:62ch;margin:0;font-size:clamp(14px,1.2vw,18px);line-height:1.6;color:#ddd0d0;text-wrap:pretty">Tell us what you know. We route it to the right division, tell you what can be filed, and give you a reference number you can track.</p>
 </section>
 
@@ -61,7 +62,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
 
     <div data-step="1" style="display:flex;flex-direction:column;gap:26px">
       <div>
-        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">Which division?</h2>
+        <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">Which division?</h2>
         <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">If you are unsure, pick the closest one. We re-route internally at intake.</p>
         <div data-group="division" style="display:flex;flex-direction:column;gap:8px">
           <button type="button" data-value="Human Rights" style="display:flex;align-items:flex-start;gap:14px;text-align:left;min-height:64px;padding:16px 18px;border:1px solid #c9c9d6;background:#fff;color:#05065d;cursor:pointer;transition:border-color .25s,background .25s" style-hover="border-color:#05065d">
@@ -90,7 +91,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
 
     <div data-step="2" style="display:none;flex-direction:column;gap:22px">
       <div>
-        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">What happened?</h2>
+        <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">What happened?</h2>
         <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">Plain language is fine. Dates, places and names help, but write what you know.</p>
       </div>
       <label style="display:flex;flex-direction:column;gap:8px">
@@ -119,7 +120,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
 
     <div data-step="3" style="display:none;flex-direction:column;gap:22px">
       <div>
-        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">What do you have?</h2>
+        <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">What do you have?</h2>
         <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">Nothing is fine too. Tick what exists so intake knows what to ask for.</p>
       </div>
       <div data-evidence="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:8px">
@@ -152,7 +153,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
 
     <div data-step="4" style="display:none;flex-direction:column;gap:22px">
       <div>
-        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">How we reach you</h2>
+        <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">How we reach you</h2>
         <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">You can report anonymously, but without a contact we cannot ask follow-up questions or tell you what was filed.</p>
       </div>
       <label style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #c9c9d6;background:#fff;cursor:pointer;min-height:48px">
@@ -197,7 +198,7 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
 
     <div data-step="5" style="display:none;flex-direction:column;gap:22px">
       <div>
-        <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">Check and submit</h2>
+        <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 8px">Check and submit</h2>
         <p style="margin:0;font-size:14px;line-height:1.6;color:#6e6f8c;max-width:54ch">Nothing is sent until you submit. You can go back and change any answer.</p>
       </div>
       <div data-review="" style="border:1px solid #d7d7e2;background:#fff"></div>
@@ -250,10 +251,10 @@ input::placeholder,textarea::placeholder{color:#9a9ab0}
   <div style="animation:ichFade .6s both;display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,56px);align-items:flex-start">
     <div style="flex:1 1 min(100%,420px);min-width:0">
       <div style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;color:#6e6f8c">Application received</div>
-      <h2 style="font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,6vw,90px);line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 20px">Logged With the Council</h2>
+      <h2 style="font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(38px,6vw,90px);line-height:0.92;letter-spacing:-.05em;text-transform:uppercase;margin:0 0 20px">Logged With the Council</h2>
       <div style="background:#05065d;color:#fff;padding:clamp(22px,2.6vw,32px);margin-bottom:20px">
         <span style="display:block;font-family:'DM Mono',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#b9bbe6;margin-bottom:12px">Your reference</span>
-        <strong data-ref="" style="display:block;font-family:'Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.03em">ICH-0000-0000</strong>
+        <strong data-ref="" style="display:block;font-family:'Archivo Narrow','Arial Narrow',Impact,'Arial Black',sans-serif;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.03em">ICH-0000-0000</strong>
         <span data-refmeta="" style="display:block;margin-top:14px;font-size:14px;line-height:1.6;color:#c9cbf0"></span>
       </div>
       <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:#343554;max-width:56ch;text-wrap:pretty">Keep this reference. It is stored on this device so you can track the application, and intake quotes it in every reply.</p>

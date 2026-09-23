@@ -1,0 +1,125 @@
+/* ICHAR spacing corrections.
+
+   The pages carry their styles inline, which no stylesheet can outrank without
+   !important. That is fine for the handful of rules below, because they exist
+   only to do the things an inline style cannot do at all: react to screen
+   width, and guard against overflow.
+
+   Everything else, the line-height floors and the display font stack, is fixed
+   in the markup itself by clean-urls.mjs, where it belongs and where it shows
+   up in a diff. */
+
+/* ---------------------------------------------------------------
+   1. Nothing may push the page sideways.
+
+   A single long word in a headline, at a display size, on a 320px phone, is
+   enough to give the whole site a horizontal scrollbar. These three rules stop
+   that without hiding the symptom behind overflow-x on the body.
+   --------------------------------------------------------------- */
+
+html, body {
+  max-width: 100%;
+}
+
+img, svg, video, canvas, iframe, table, pre {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, p, li, dd, dt, span, div, a, button, label {
+  overflow-wrap: break-word;
+}
+
+/* ---------------------------------------------------------------
+   2. Display headings on small screens.
+
+   The headings are set for a condensed face at -.055em. Once the screen is
+   narrow the lines wrap two and three deep, and tight leading that reads as
+   confident on a desktop reads as collapsed on a phone. Open the leading and
+   let most of the negative tracking go.
+   --------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  h1, h2, h3 {
+    line-height: 0.98 !important;
+    letter-spacing: -0.025em !important;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 420px) {
+  h1, h2, h3 {
+    line-height: 1.02 !important;
+    letter-spacing: -0.015em !important;
+    hyphens: auto;
+  }
+}
+
+/* The very largest headings carry the longest words. ENVIRONMENTAL and
+   INTERNATIONAL are thirteen characters with no break opportunity, so on the
+   narrowest phones they get a size the line can actually hold. */
+@media (max-width: 380px) {
+  h1 { font-size: clamp(30px, 9vw, 44px) !important; }
+  h2 { font-size: clamp(27px, 8vw, 40px) !important; }
+}
+
+/* ---------------------------------------------------------------
+   3. Body text and breathing room.
+   --------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  p, li, dd {
+    line-height: 1.7;
+  }
+
+  /* Paragraphs set to sit under a headline need air once the headline
+     wraps to three lines. */
+  h1 + p, h2 + p, h3 + p {
+    margin-top: 14px;
+  }
+}
+
+/* ---------------------------------------------------------------
+   4. Touch targets.
+
+   Anything a finger has to land on gets the 44px that both Apple and the WCAG
+   target-size guidance ask for. Several of the smaller links and chips on the
+   site come in under that.
+   --------------------------------------------------------------- */
+
+@media (pointer: coarse) {
+  a[href], button, [role="button"], input[type="submit"], select {
+    min-height: 44px;
+  }
+
+  a[href]:not([style*="display:inline"]),
+  button {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ---------------------------------------------------------------
+   5. Tables and wide blocks scroll inside themselves rather than
+      stretching the page.
+   --------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ---------------------------------------------------------------
+   6. Respect the reader.
+   --------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
