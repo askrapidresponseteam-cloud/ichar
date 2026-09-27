@@ -9,6 +9,7 @@
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = new URL('.', import.meta.url).pathname;
 const cfg = JSON.parse(readFileSync(join(ROOT, 'vercel.json'), 'utf8'));
@@ -127,6 +128,34 @@ for (const r of routes) {
   const m = html.match(/<title[^>]*>([^<]+)<\/title>/i);
   report('page ' + r + ' has a title', !!m && m[1].trim().length > 3, m ? m[1] : 'none');
 }
+
+/* 7. Speed. The 1.1 MB logo PNG stays out of every page, the nav and the
+      footer; React is served from this site and is byte-identical to the
+      version support.js pins; every runtime page starts its downloads early. */
+const heavy = [];
+for (const r of [...routes, '/ICHAR-Nav.dc.html', '/ICHAR-Footer.dc.html']) {
+  const html = await (await fetch(base + r)).text();
+  if (html.includes('assets/ichar-logo.png')) heavy.push(r);
+}
+report('no page loads the 1.1 MB logo png', heavy.length === 0, heavy.join(', '));
+
+const rt = readFileSync(join(ROOT, 'support.js'), 'utf8');
+for (const [name, key] of [['react', 'REACT'], ['react-dom', 'REACT_DOM']]) {
+  const url = (rt.match(new RegExp('var ' + key + '_URL = "([^"]+)"')) || [])[1] || '';
+  const sri = (rt.match(new RegExp('var ' + key + '_SRI = "([^"]+)"')) || [])[1] || '';
+  const ver = (url.match(/@(\d+\.\d+\.\d+)\//) || [])[1];
+  const file = join(ROOT, 'assets', 'vendor', name + '-' + ver + '.production.min.js');
+  const ok = existsSync(file) &&
+    'sha384-' + createHash('sha384').update(readFileSync(file)).digest('base64') === sri;
+  report(name + ' ' + ver + ' is self-hosted and matches support.js', ok, file);
+}
+
+const slow = [];
+for (const r of routes) {
+  const html = await (await fetch(base + r)).text();
+  if (html.includes('./support.js') && !(html.includes('ichar:fast-start') && html.includes('window.__resources'))) slow.push(r);
+}
+report('every runtime page preloads React, nav and footer', slow.length === 0, slow.join(', '));
 
 server.close();
 console.log('\n' + (failures ? failures + ' checks failed' : 'All checks passed.'));
