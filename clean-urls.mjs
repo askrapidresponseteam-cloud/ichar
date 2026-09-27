@@ -67,6 +67,18 @@ const PAGES = [
     file: 'ICHAR Policies.dc.html', path: '/policies',
     title: 'Policies - ICHAR',
     description: 'Privacy, terms and accessibility.'
+  },
+  /* Council profiles. One path segment only: the pages load ./support.js and
+     the nav relative to their own URL, so /council/kirthika would 404 both. */
+  {
+    file: 'ICHAR Profile E Kirthika.dc.html', path: '/kirthika',
+    title: 'Adv. E. Kirthika, Trustee - ICHAR',
+    description: 'Adv. E. Kirthika, Trustee of ICHAR. Advocate before the Madras High Court, practising primarily in writs, and animal welfare activist.'
+  },
+  {
+    file: 'ICHAR Profile Jothi Sathyap Priya.dc.html', path: '/jothi-sathyap-priya',
+    title: 'Adv. Jothi Sathyap Priya V. - ICHAR',
+    description: 'Adv. Jothi Sathyap Priya V., advocate before the Madras High Court, Chennai. Environmental, constitutional and administrative law.'
   }
 ];
 

@@ -54,7 +54,8 @@ function report(label, ok, extra) {
 }
 
 /* 1. Every clean route serves a page. */
-const routes = ['/', '/about', '/council', '/divisions', '/report', '/status', '/donate', '/policies'];
+const routes = ['/', '/about', '/council', '/divisions', '/report', '/status', '/donate', '/policies',
+  '/kirthika', '/jothi-sathyap-priya'];
 for (const r of routes) {
   const res = await fetch(base + r, { redirect: 'manual' });
   const body = res.status === 200 ? await res.text() : '';
@@ -69,7 +70,9 @@ const oldUrls = [
   ['/ICHAR%20About.dc.html', '/about'],
   ['/ICHAR%20Case%20Status.dc.html', '/status'],
   ['/ICHAR%20Report%20a%20Violation.dc.html', '/report'],
-  ['/index.html', '/']
+  ['/index.html', '/'],
+  ['/ICHAR%20Profile%20E%20Kirthika.dc.html', '/kirthika'],
+  ['/ICHAR%20Profile%20Jothi%20Sathyap%20Priya.dc.html', '/jothi-sathyap-priya']
 ];
 for (const [from, to] of oldUrls) {
   const res = await fetch(base + from, { redirect: 'manual' });
