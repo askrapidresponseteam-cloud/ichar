@@ -195,7 +195,7 @@ function prefixStack(text, oldStack, newStack) {
     .join(newStack);
 }
 
-function fixType(html) {
+function fixType(html, isComponent) {
   let out = html;
 
   /* 1. Put a real condensed face at the front of the display stack. */
@@ -217,6 +217,13 @@ function fixType(html) {
   /* The exported pages keep their head tags inside a <helmet> block. */
   if (!out.includes('assets/type.css') && /<\/helmet>/i.test(out)) {
     out = out.replace(/<\/helmet>/i, '<link rel="stylesheet" href="/assets/type.css">\n</helmet>');
+  }
+
+  /* 3b. Load the heading fit script, which shrinks a heading whose longest
+         word is wider than its box rather than letting it split mid-word. */
+  /* Not the nav or footer: they are fetched as components, not opened as pages. */
+  if (!isComponent && !out.includes('assets/fit.js') && /<\/head>/i.test(out)) {
+    out = out.replace(/<\/head>/i, '<script src="/assets/fit.js" defer></script>\n</head>');
   }
 
   /* 4. Floor the leading on every heading that sits below it. */
@@ -242,7 +249,7 @@ files.forEach(f => {
   if (f.endsWith('.html')) {
     after = rewriteLinks(after);
     if (page) after = addHead(after, page);
-    after = fixType(after);
+    after = fixType(after, /^ICHAR-(Nav|Footer)\.dc\.html$/.test(f));
   }
   after = stripDashes(after);
 
