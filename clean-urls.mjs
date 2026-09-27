@@ -67,6 +67,28 @@ const PAGES = [
     file: 'ICHAR Policies.dc.html', path: '/policies',
     title: 'Policies - ICHAR',
     description: 'Privacy, terms and accessibility.'
+  },
+  /* Council profiles. One path segment only: the pages load ./support.js and
+     the nav relative to their own URL, so /council/kirthika would 404 both. */
+  {
+    file: 'ICHAR Profile E Kirthika.dc.html', path: '/kirthika',
+    title: 'Adv. E. Kirthika, Trustee - ICHAR',
+    description: 'Adv. E. Kirthika, Trustee of ICHAR. Advocate before the Madras High Court, practising primarily in writs, and animal welfare activist.'
+  },
+  {
+    file: 'ICHAR Profile Jothi Sathyap Priya.dc.html', path: '/jothi-sathyap-priya',
+    title: 'Adv. Jothi Sathyap Priya V. - ICHAR',
+    description: 'Adv. Jothi Sathyap Priya V., advocate before the Madras High Court, Chennai. Environmental, constitutional and administrative law.'
+  },
+  {
+    file: 'ICHAR Profile Subhalaxmi Sen.dc.html', path: '/subhalaxmi-sen',
+    title: 'Adv. Subhalaxmi Sen, Secretary, Animal Rights - ICHAR',
+    description: 'Adv. Subhalaxmi Sen, advocate before the Calcutta High Court and animal rights advocate. Cruelty, unlawful transport, rescue and the custody of rescued animals.'
+  },
+  {
+    file: 'ICHAR Profile G Sanjay.dc.html', path: '/sanjay',
+    title: 'Adv. G. Sanjay - ICHAR',
+    description: 'Adv. G. Sanjay, Jay & Law Company, Coimbatore. Strategic litigation before the Supreme Court, various High Courts and District Courts.'
   }
 ];
 

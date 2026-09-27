@@ -44,6 +44,14 @@ node clean-urls.mjs . --check
 | Track an Application | `/status` |
 | Donate | `/donate` |
 | Policies | `/policies` |
+| Profile, Adv. E. Kirthika | `/kirthika` |
+| Profile, Adv. Jothi Sathyap Priya V. | `/jothi-sathyap-priya` |
+| Profile, Adv. Subhalaxmi Sen | `/subhalaxmi-sen` |
+| Profile, Adv. G. Sanjay | `/sanjay` |
+
+Profile routes stay one path segment deep. `/council/kirthika` would make
+`./support.js` and the nav resolve under `/council/` and 404, for the same
+reason as the trailing slash rule below.
 
 The slugs are not invented. The nav already labels every page this way, with
 `<dc-import name="ICHAR-Nav" active="report">`, so the markup and the URLs now

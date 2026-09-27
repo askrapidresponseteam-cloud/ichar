@@ -26,6 +26,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ichar.org/kirthika</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ichar.org/jothi-sathyap-priya</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ichar.org/subhalaxmi-sen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ichar.org/sanjay</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ichar.org/status</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
