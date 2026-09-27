@@ -25,8 +25,16 @@ img, svg, video, canvas, iframe, table, pre {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, p, li, dd, dt, span, div, a, button, label {
+p, li, dd, dt, label {
   overflow-wrap: break-word;
+}
+
+/* Headings and display labels are never split inside a word. A word that is
+   too wide for its box is shrunk to fit by assets/fit.js instead. */
+h1, h2, h3, h4, strong, span, a, button {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
 }
 
 /* ---------------------------------------------------------------
@@ -50,7 +58,6 @@ h1, h2, h3, h4, p, li, dd, dt, span, div, a, button, label {
   h1, h2, h3 {
     line-height: 1.02 !important;
     letter-spacing: -0.015em !important;
-    hyphens: auto;
   }
 }
 
