@@ -46,6 +46,7 @@ node clean-urls.mjs . --check
 | Policies | `/policies` |
 | Profile, Adv. E. Kirthika | `/kirthika` |
 | Profile, Adv. Jothi Sathyap Priya V. | `/jothi-sathyap-priya` |
+| Profile, Adv. Subhalaxmi Sen | `/subhalaxmi-sen` |
 
 Profile routes stay one path segment deep. `/council/kirthika` would make
 `./support.js` and the nav resolve under `/council/` and 404, for the same

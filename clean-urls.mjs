@@ -79,6 +79,11 @@ const PAGES = [
     file: 'ICHAR Profile Jothi Sathyap Priya.dc.html', path: '/jothi-sathyap-priya',
     title: 'Adv. Jothi Sathyap Priya V. - ICHAR',
     description: 'Adv. Jothi Sathyap Priya V., advocate before the Madras High Court, Chennai. Environmental, constitutional and administrative law.'
+  },
+  {
+    file: 'ICHAR Profile Subhalaxmi Sen.dc.html', path: '/subhalaxmi-sen',
+    title: 'Adv. Subhalaxmi Sen, Secretary, Animal Rights - ICHAR',
+    description: 'Adv. Subhalaxmi Sen, advocate before the Calcutta High Court and animal rights advocate. Cruelty, unlawful transport, rescue and the custody of rescued animals.'
   }
 ];
 
