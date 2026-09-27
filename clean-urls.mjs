@@ -84,6 +84,11 @@ const PAGES = [
     file: 'ICHAR Profile Subhalaxmi Sen.dc.html', path: '/subhalaxmi-sen',
     title: 'Adv. Subhalaxmi Sen, Secretary, Animal Rights - ICHAR',
     description: 'Adv. Subhalaxmi Sen, advocate before the Calcutta High Court and animal rights advocate. Cruelty, unlawful transport, rescue and the custody of rescued animals.'
+  },
+  {
+    file: 'ICHAR Profile G Sanjay.dc.html', path: '/sanjay',
+    title: 'Adv. G. Sanjay - ICHAR',
+    description: 'Adv. G. Sanjay, Jay & Law Company, Coimbatore. Strategic litigation before the Supreme Court, various High Courts and District Courts.'
   }
 ];
 

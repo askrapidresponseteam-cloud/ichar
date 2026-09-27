@@ -12,7 +12,8 @@
     { "source": "/policies", "destination": "/ICHAR%20Policies.dc.html" },
     { "source": "/kirthika", "destination": "/ICHAR%20Profile%20E%20Kirthika.dc.html" },
     { "source": "/jothi-sathyap-priya", "destination": "/ICHAR%20Profile%20Jothi%20Sathyap%20Priya.dc.html" },
-    { "source": "/subhalaxmi-sen", "destination": "/ICHAR%20Profile%20Subhalaxmi%20Sen.dc.html" }
+    { "source": "/subhalaxmi-sen", "destination": "/ICHAR%20Profile%20Subhalaxmi%20Sen.dc.html" },
+    { "source": "/sanjay", "destination": "/ICHAR%20Profile%20G%20Sanjay.dc.html" }
   ],
   "redirects": [
     { "source": "/ICHAR Home.dc.html", "destination": "/", "permanent": true },
@@ -37,7 +38,9 @@
     { "source": "/ICHAR Profile Jothi Sathyap Priya.dc.html", "destination": "/jothi-sathyap-priya", "permanent": true },
     { "source": "/ICHAR%20Profile%20Jothi%20Sathyap%20Priya.dc.html", "destination": "/jothi-sathyap-priya", "permanent": true },
     { "source": "/ICHAR Profile Subhalaxmi Sen.dc.html", "destination": "/subhalaxmi-sen", "permanent": true },
-    { "source": "/ICHAR%20Profile%20Subhalaxmi%20Sen.dc.html", "destination": "/subhalaxmi-sen", "permanent": true }
+    { "source": "/ICHAR%20Profile%20Subhalaxmi%20Sen.dc.html", "destination": "/subhalaxmi-sen", "permanent": true },
+    { "source": "/ICHAR Profile G Sanjay.dc.html", "destination": "/sanjay", "permanent": true },
+    { "source": "/ICHAR%20Profile%20G%20Sanjay.dc.html", "destination": "/sanjay", "permanent": true }
   ],
   "headers": [
     {
