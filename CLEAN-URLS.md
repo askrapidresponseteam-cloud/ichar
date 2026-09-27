@@ -185,3 +185,33 @@ pushing the page sideways, gives tap targets 44px on touch devices, and lets
 wide tables scroll inside themselves.
 
 Run the script after every export and the corrections come back with it.
+
+## Speed
+
+Every page except the home page is drawn in the browser by `support.js`, and
+nothing shows until it has React, the nav and the footer. `clean-urls.mjs`
+makes that fast, and `verify.mjs` checks it stays that way:
+
+- **React is served from this site** (`assets/vendor/`), not unpkg.com, using the
+  `window.__resources` override that `support.js` already supports, so the
+  vendor file is untouched. `verify.mjs` checks the copies are byte-identical to
+  the versions `support.js` pins. If the runtime is ever upgraded, add the
+  matching `react-X.Y.Z.production.min.js` and `react-dom-X.Y.Z.production.min.js`
+  to `assets/vendor/`; until then pages fall back to unpkg on their own.
+- **Everything the runtime needs starts downloading at once**, from a block
+  between `<!-- ichar:fast-start -->` markers in each page's head: React, the nav,
+  the footer and the fonts.
+- **The logo is the WebP** (20 to 50 KB), never the 1.1 MB `ichar-logo.png`.
+- **`type.css`, `fit.js` and `site.js` are linked with a content fingerprint**
+  (`?v=...`), because `/assets` is cached for a year.
+
+On a throttled mobile connection this took the inner pages from about 8
+seconds to about 2 before anything shows, and from about 1.4 MB to 300 KB.
+
+**Replacing a photo: always use a new file name.** Files in `/assets` are cached
+for a year, so a changed photo under the same name would keep showing the old
+one to anyone who has visited before. That is why Kirthika's photo is
+`kirthika-portrait-*` rather than `kirthika-*`.
+
+Photos come in 480 and 800 px WebP and JPEG for cards and heroes, plus a 160 px
+JPEG for the small "Also on the council" tiles.

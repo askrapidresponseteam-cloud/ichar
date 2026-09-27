@@ -24,6 +24,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const dir = process.argv[2] || '.';
 const check = process.argv.includes('--check');
@@ -235,6 +236,98 @@ function fixType(html, isComponent) {
   return out;
 }
 
+/* ---------------------------------------------------------------
+   Speed.
+
+   Every page except the home page is drawn by the component runtime in
+   support.js, and nothing shows until it has React, the nav and the footer.
+   Left alone, those arrive one after another: the page, then support.js, then
+   React from unpkg.com (a second site, with its own connection to set up),
+   then the nav and footer. This does four things about that.
+
+   1. React is served from /assets/vendor on this site. support.js has a
+      built-in override for that, window.__resources, so the vendor file is
+      not edited. The version is read out of support.js, so if the runtime is
+      ever upgraded and the matching files are not in assets/vendor, the
+      override is simply left out and React comes from unpkg as before.
+   2. The browser is told up front to start downloading React, the nav, the
+      footer and the fonts, so they arrive in parallel with support.js.
+   3. The logo is the 20-50 KB WebP, not the 1.1 MB PNG the export uses.
+   4. type.css, fit.js and site.js are linked with a fingerprint of their
+      contents (?v=...). /assets is cached for a year, so without this a
+      returning visitor would keep an old copy after it changes.
+   --------------------------------------------------------------- */
+
+const FAST_START_OPEN = '<!-- ichar:fast-start -->';
+const FAST_START_CLOSE = '<!-- /ichar:fast-start -->';
+
+function reactVendorMap() {
+  const rt = existsSync(join(dir, 'support.js')) ? readFileSync(join(dir, 'support.js'), 'utf8') : '';
+  const map = {};
+  for (const [name, key] of [['react', 'REACT_URL'], ['react-dom', 'REACT_DOM_URL']]) {
+    const m = rt.match(new RegExp('var ' + key + ' = "([^"]+)"'));
+    const v = m && m[1].match(/@(\d+\.\d+\.\d+)\//);
+    if (!m || !v) return null;
+    const local = '/assets/vendor/' + name + '-' + v[1] + '.production.min.js';
+    if (!existsSync(join(dir, local))) return null;
+    map[m[1]] = local;
+  }
+  return map;
+}
+const REACT_VENDOR = reactVendorMap();
+if (!REACT_VENDOR) console.log('note: React vendor files do not match support.js, pages will load React from unpkg');
+
+const fingerprints = {};
+function fingerprint(asset) {
+  if (!(asset in fingerprints)) {
+    const file = join(dir, 'assets', asset);
+    fingerprints[asset] = existsSync(file)
+      ? createHash('sha1').update(readFileSync(file)).digest('hex').slice(0, 8) : null;
+  }
+  return fingerprints[asset];
+}
+
+function speedUp(html, isComponent) {
+  let out = html;
+
+  /* Logo. The nav shows it about 130px wide, so 400px covers a retina screen;
+     everywhere else gets the 800px version. */
+  out = out.replace(/assets\/ichar-logo\.png/g, isComponent && /data-navroot/.test(out)
+    ? 'assets/ichar-logo-400.webp' : 'assets/ichar-logo-800.webp');
+
+  /* Fingerprinted links to the stylesheet and scripts in /assets. */
+  out = out.replace(/(assets\/(type\.css|fit\.js|site\.js))(\?v=[0-9a-f]+)?/g, (m, path, asset) => {
+    const fp = fingerprint(asset);
+    return fp ? path + '?v=' + fp : m;
+  });
+
+  /* Early downloads, for pages the runtime draws. */
+  if (isComponent || !out.includes('<script src="./support.js"></script>')) return out;
+  const start = out.indexOf(FAST_START_OPEN);
+  if (start !== -1) {
+    const end = out.indexOf(FAST_START_CLOSE, start) + FAST_START_CLOSE.length;
+    out = out.slice(0, start) + out.slice(end).replace(/^\n/, '');
+  }
+  const lines = [FAST_START_OPEN,
+    '<link rel="preconnect" href="https://fonts.googleapis.com">',
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'];
+  const font = out.match(/href="(https:\/\/fonts\.googleapis\.com\/css2\?[^"]+)"/);
+  if (font) lines.push('<link rel="preload" as="style" href="' + font[1] + '">');
+  if (REACT_VENDOR) {
+    Object.values(REACT_VENDOR).forEach(src => lines.push('<link rel="preload" as="script" href="' + src + '">'));
+  }
+  ['ICHAR-Nav', 'ICHAR-Footer'].forEach(name => {
+    if (out.includes('<dc-import name="' + name + '"')) {
+      lines.push('<link rel="preload" as="fetch" href="/' + name + '.dc.html" crossorigin>');
+    }
+  });
+  if (REACT_VENDOR) {
+    lines.push('<script>window.__resources=Object.assign(window.__resources||{},' + JSON.stringify(REACT_VENDOR) + ');</script>');
+  }
+  lines.push(FAST_START_CLOSE);
+  return out.replace('<script src="./support.js"></script>', lines.join('\n') + '\n<script src="./support.js"></script>');
+}
+
 let changed = 0;
 const files = readdirSync(dir).filter(f => f.endsWith('.html') || f.endsWith('.js'));
 if (existsSync(join(dir, 'assets', 'site.js'))) files.push(join('assets', 'site.js'));
@@ -250,6 +343,7 @@ files.forEach(f => {
     after = rewriteLinks(after);
     if (page) after = addHead(after, page);
     after = fixType(after, /^ICHAR-(Nav|Footer)\.dc\.html$/.test(f));
+    after = speedUp(after, /^ICHAR-(Nav|Footer)\.dc\.html$/.test(f));
   }
   after = stripDashes(after);
 
